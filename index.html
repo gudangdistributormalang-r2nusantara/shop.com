@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="id" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teuku Rijul — Freelancer Premium</title>
+  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik. Tema terang premium, elegan, dan super modern." />
+  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium, Freelance Indonesia" />
+  <meta name="author" content="Teuku Rijul" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Teuku Rijul — Freelancer Premium" />
+  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi, kecepatan, dan keamanan maksimal." />
+  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:#f5f8ff;
+      --text:#1a2a3a;
+      --text-soft:#4a627a;
+      --panel:#ffffffee;
+      --accent:#0b66ff;
+      --accent-2:#00a3ff;
+      --border:#d6e4ff;
+      --radius:16px;
+    }
+
+    body {
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Poppins", system-ui;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width:1150px;
+      margin:34px auto;
+      padding:20px;
+    }
+
+    /* HERO */
+    .hero {
+      padding:90px 20px;
+      text-align:center;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg, #ffffff, #e8f1ff);
+      border:1px solid var(--border);
+      box-shadow:0 10px 35px rgba(0,0,0,0.07);
+    }
+    .hero h1 {font-size:44px;margin:0 0 10px;font-weight:700;}
+    .hero p {margin:0;font-size:18px;color:var(--text-soft);}    
+    .cta {
+      display:inline-block;
+      margin-top:22px;
+      padding:14px 32px;
+      border-radius:14px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 25px rgba(0,102,255,0.18);
+    }
+
+    /* SECTION */
+    .section {
+      background:var(--panel);
+      border-radius:var(--radius);
+      padding:40px;
+      margin:40px 0;
+      border:1px solid var(--border);
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+    .row {
+      display:flex;
+      gap:32px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .profile {
+      width:210px;
+      height:210px;
+      border-radius:var(--radius);
+      object-fit:cover;
+      border:3px solid var(--accent-2);
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+    h2 {margin:0 0 14px;font-size:30px;}
+    p {color:var(--text-soft);line-height:1.6;}
+
+    /* CARDS */
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card {
+      padding:22px;
+      background:#ffffff;
+      border-radius:14px;
+      border:1px solid var(--border);
+      box-shadow:0 8px 25px rgba(0,0,0,0.04);
+      transition:0.25s;
+    }
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 16px 35px rgba(0,0,0,0.09);
+    }
+    .price {
+      margin-top:14px;
+      font-size:20px;
+      font-weight:700;
+      color:var(--accent);
+    }
+
+    /* SOCIALS */
+    .socials {display:flex;gap:16px;margin-top:10px;justify-content:center;}
+    .socials img {
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    /* REVIEWS */
+    .reviews .meta{text-align:center;color:var(--text-soft);margin-bottom:14px;}
+    .slider {display:flex;gap:16px;overflow:hidden;padding:6px;}
+    .rev {
+      min-width:260px;
+      background:#ffffff;
+      padding:18px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    /* FOOTER */
+    footer {text-align:center;color:var(--text-soft);padding:36px 0;font-size:14px;}
+
+    /* WHATSAPP BUTTON */
+    .wa {
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      background:#25D366;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 28px rgba(0,184,107,0.18);
+      z-index:900;
+    }
+    .wa img {width:34px;height:34px;filter:brightness(0) invert(1);}    
+
+    /* Fade animation */
+    .fade {opacity:0;transform:translateY(10px);transition:.7s ease;}    
+    .fade.in {opacity:1;transform:none;}    
+
+    @media(max-width:640px){
+      .hero h1{font-size:32px;}
+      .profile{width:160px;height:160px;}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" id="main">
+
+    <!-- HERO -->
+    <section class="hero fade" data-fade>
+      <h1>Teuku Rijul</h1>
+      <p>Freelancer Premium • Cepat • Rahasia • Hasil Sangat Berkualitas</p>
+      <a class="cta" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section fade" data-fade>
+      <div class="row">
+        <img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Foto Teuku Rijul" />
+        <div class="about">
+          <h2>Tentang Saya</h2>
+          <p>Saya adalah freelancer premium yang mengutamakan kualitas, kecepatan, keamanan, dan presisi. Setiap proyek dirancang dengan standar tinggi untuk memenuhi kebutuhan klien secara profesional.</p>
+          <div style="margin-top:12px;font-weight:600;color:var(--text)">Harga Jasa • <span style="color:var(--accent)">IDR 1.999.999 — IDR 5.999.999</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section fade" data-fade>
+      <h2>Varian Jasa & Harga</h2>
+      <div class="cards">
+        <article class="card"><h3>Basic Service</h3><p>Layanan standar dengan hasil berkualitas.</p><div class="price">IDR 1.999.999</div></article>
+        <article class="card"><h3>Standard Service</h3><p>Fitur lebih lengkap, eksekusi lebih cepat.</p><div class="price">IDR 2.999.999</div></article>
+        <article class="card"><h3>Professional Service</h3><p>Fokus detail tinggi dan tingkat profesional.</p><div class="price">IDR 4.499.999</div></article>
+        <article class="card"><h3>Premium Service</h3><p>Layanan prioritas tertinggi, keamanan ekstra.</p><div class="price">IDR 5.999.999</div></article>
+      </div>
+    </section>
+
+    <!-- SOCIALS -->
+    <section class="section fade" data-fade>
+      <h2>Sosial Media</h2>
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" /></a>
+        <a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" /></a>
+        <a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" /></a>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section fade reviews" data-fade>
+      <h2>Ulasan</h2>
+      <div class="meta">Rating rata-rata: <strong>★★★★★</strong> — 3.000+ ulasan</div>
+      <div class="slider">
+        <div class="rev"><strong>Rahmat S.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Pelayanan sangat baik dan profesional. Sangat direkomendasikan!"</p></div>
+        <div class="rev"><strong>Andi P.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Kerja cepat dan rapi, hasil sangat bagus."</p></div>
+        <div class="rev"><strong>Dewi L.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Profesional, bertanggung jawab, dan hasil memuaskan."</p></div>
+      </div>
+    </section>
+
+    <footer>© 2025 Teuku Rijul — Premium Freelancer. All Rights Reserved.</footer>
+  </main>
+
+  <!-- WhatsApp Floating -->
+  <a class="wa" href="https://wa.me/62895328323138" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" /></a>
+
+  <script>
+    // Fade animation
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => {if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}});
+    },{threshold:0.2});
+    document.querySelectorAll('[data-fade]').forEach(el => io.observe(el));
+
+    // Auto-slider
+    const slider = document.querySelector('.slider');
+    if(slider){
+      let idx=0;
+      const items = slider.children;
+      const total = items.length;
+      setInterval(()=>{
+        idx=(idx+1)%total;
+        slider.scrollTo({left: idx*(items[0].offsetWidth+16), behavior:'smooth'});
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
