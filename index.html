@@ -1,250 +1,222 @@
-<!doctype html>
-<html lang="id" class="light">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Teuku Rijul — Freelancer Premium</title>
-  <meta name="description" content="Teuku Rijul - Freelancer Premium dengan layanan cepat, aman, dan futuristik. Tema terang premium, elegan, dan super modern." />
-  <meta name="keywords" content="Freelancer Premium, Teuku Rijul, Jasa Profesional, Layanan Premium, Freelance Indonesia" />
-  <meta name="author" content="Teuku Rijul" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Teuku Rijul — Freelancer Premium" />
-  <meta property="og:description" content="Layanan freelance premium dengan kualitas tinggi, kecepatan, dan keamanan maksimal." />
-  <meta property="og:image" content="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <title>TEUKU RIJUL | GHOST PROTOCOL</title>
+  <meta name="description" content="Elite Cyber Security Operative • Penetration Testing • Red Team • Digital Forensics" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
   <style>
     :root {
-      --bg:#f5f8ff;
-      --text:#1a2a3a;
-      --text-soft:#4a627a;
-      --panel:#ffffffee;
-      --accent:#0b66ff;
-      --accent-2:#00a3ff;
-      --border:#d6e4ff;
-      --radius:16px;
+      --neon-cyan: #00f0ff;
+      --neon-pink: #ff00aa;
+      --neon-purple: #8b00ff;
     }
 
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Poppins", system-ui;
-      -webkit-font-smoothing: antialiased;
+      background: #05050a;
+      color: #e0f2fe;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
 
-    .wrap {
-      max-width:1150px;
-      margin:34px auto;
-      padding:20px;
+    /* Advanced Background */
+    .cyber-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,240,255,0.08) 0%, transparent 70%);
+      z-index: -3;
+    }
+    .matrix {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(transparent 0px, transparent 2px, rgba(0,240,255,0.04) 2px, rgba(0,240,255,0.04) 4px);
+      z-index: -2;
+      animation: matrix-flow 20s linear infinite;
+    }
+    @keyframes matrix-flow { 0% { background-position: 0 0; } 100% { background-position: 0 1000px; } }
+
+    .scanline {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(transparent 40%, rgba(0,240,255,0.15) 50%, transparent 60%);
+      background-size: 100% 300px;
+      animation: scan 7s linear infinite;
+      z-index: -1;
+      pointer-events: none;
     }
 
-    /* HERO */
     .hero {
-      padding:90px 20px;
-      text-align:center;
-      border-radius:var(--radius);
-      background:linear-gradient(135deg, #ffffff, #e8f1ff);
-      border:1px solid var(--border);
-      box-shadow:0 10px 35px rgba(0,0,0,0.07);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(rgba(5,5,15,0.9), rgba(5,5,15,0.95)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0') center/cover;
     }
-    .hero h1 {font-size:44px;margin:0 0 10px;font-weight:700;}
-    .hero p {margin:0;font-size:18px;color:var(--text-soft);}    
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 6rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00f0ff, #ff00aa, #8b00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 80px rgba(0,240,255,0.7);
+      animation: logo-glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes logo-glow {
+      from { text-shadow: 0 0 40px rgba(0,240,255,0.6); }
+      to { text-shadow: 0 0 100px rgba(255,0,170,0.8); }
+    }
+
+    .tagline {
+      font-size: 1.6rem;
+      color: var(--neon-cyan);
+      margin: 20px 0 40px;
+      letter-spacing: 8px;
+      font-weight: 500;
+    }
+
     .cta {
-      display:inline-block;
-      margin-top:22px;
-      padding:14px 32px;
-      border-radius:14px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 10px 25px rgba(0,102,255,0.18);
+      padding: 20px 60px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: transparent;
+      border: 3px solid var(--neon-cyan);
+      color: white;
+      border-radius: 9999px;
+      transition: all 0.5s;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    .cta:hover {
+      background: var(--neon-cyan);
+      color: #000;
+      transform: scale(1.1);
+      box-shadow: 0 0 60px rgba(0,240,255,0.9);
     }
 
-    /* SECTION */
     .section {
-      background:var(--panel);
-      border-radius:var(--radius);
-      padding:40px;
-      margin:40px 0;
-      border:1px solid var(--border);
-      box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    }
-    .row {
-      display:flex;
-      gap:32px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .profile {
-      width:210px;
-      height:210px;
-      border-radius:var(--radius);
-      object-fit:cover;
-      border:3px solid var(--accent-2);
-      box-shadow:0 10px 30px rgba(0,0,0,0.12);
-    }
-    h2 {margin:0 0 14px;font-size:30px;}
-    p {color:var(--text-soft);line-height:1.6;}
-
-    /* CARDS */
-    .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-    .card {
-      padding:22px;
-      background:#ffffff;
-      border-radius:14px;
-      border:1px solid var(--border);
-      box-shadow:0 8px 25px rgba(0,0,0,0.04);
-      transition:0.25s;
-    }
-    .card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 16px 35px rgba(0,0,0,0.09);
-    }
-    .price {
-      margin-top:14px;
-      font-size:20px;
-      font-weight:700;
-      color:var(--accent);
+      padding: 120px 20px;
+      position: relative;
     }
 
-    /* SOCIALS */
-    .socials {display:flex;gap:16px;margin-top:10px;justify-content:center;}
-    .socials img {
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      box-shadow:0 10px 20px rgba(0,0,0,0.12);
+    .glass {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 28px;
+      padding: 60px;
     }
 
-    /* REVIEWS */
-    .reviews .meta{text-align:center;color:var(--text-soft);margin-bottom:14px;}
-    .slider {display:flex;gap:16px;overflow:hidden;padding:6px;}
-    .rev {
-      min-width:260px;
-      background:#ffffff;
-      padding:18px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    .service-card {
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .service-card:hover {
+      transform: translateY(-20px) scale(1.03);
+      box-shadow: 0 0 80px rgba(0,240,255,0.4);
     }
 
-    /* FOOTER */
-    footer {text-align:center;color:var(--text-soft);padding:36px 0;font-size:14px;}
-
-    /* WHATSAPP BUTTON */
-    .wa {
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      background:#25D366;
-      display:grid;
-      place-items:center;
-      box-shadow:0 10px 28px rgba(0,184,107,0.18);
-      z-index:900;
-    }
-    .wa img {width:34px;height:34px;filter:brightness(0) invert(1);}    
-
-    /* Fade animation */
-    .fade {opacity:0;transform:translateY(10px);transition:.7s ease;}    
-    .fade.in {opacity:1;transform:none;}    
-
-    @media(max-width:640px){
-      .hero h1{font-size:32px;}
-      .profile{width:160px;height:160px;}
+    .terminal {
+      font-family: monospace;
+      background: #0a0a0f;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid var(--neon-cyan);
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
-  <main class="wrap" id="main">
 
-    <!-- HERO -->
-    <section class="hero fade" data-fade>
-      <h1>Teuku Rijul</h1>
-      <p>Freelancer Premium • Cepat • Rahasia • Hasil Sangat Berkualitas</p>
-      <a class="cta" href="https://wa.me/62895328323138" target="_blank">Hubungi Sekarang</a>
-    </section>
+  <div class="cyber-bg"></div>
+  <div class="matrix"></div>
+  <div class="scanline"></div>
 
-    <!-- ABOUT -->
-    <section class="section fade" data-fade>
-      <div class="row">
-        <img class="profile" src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Foto Teuku Rijul" />
-        <div class="about">
-          <h2>Tentang Saya</h2>
-          <p>Saya adalah freelancer premium yang mengutamakan kualitas, kecepatan, keamanan, dan presisi. Setiap proyek dirancang dengan standar tinggi untuk memenuhi kebutuhan klien secara profesional.</p>
-          <div style="margin-top:12px;font-weight:600;color:var(--text)">Harga Jasa • <span style="color:var(--accent)">IDR 1.999.999 — IDR 5.999.999</span></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div style="z-index:2; max-width:1200px; margin:0 auto; padding:0 20px;">
+      <h1 class="logo" id="logo">TEUKU RIJUL</h1>
+      <p class="tagline">GHOST PROTOCOL • NETRUNNER ELITE</p>
+      <p style="max-width:720px; margin:0 auto 50px; font-size:1.25rem; color:#a5b4fc;">
+        Elite freelance cyber security operative. Specialized in penetration testing, red team operations, 
+        and digital defense systems.
+      </p>
+      <a href="https://wa.me/62895328323138" target="_blank" class="cta">ESTABLISH SECURE CHANNEL</a>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="section">
+    <div class="glass" style="max-width:1100px; margin:0 auto;">
+      <div style="display:flex; gap:70px; align-items:center; flex-wrap:wrap;">
+        <img src="https://i.postimg.cc/0QRxwfnC/profile-optimized.jpg" alt="Teuku Rijul" 
+             style="width:340px; border-radius:24px; border:5px solid #00f0ff; box-shadow:0 0 60px rgba(0,240,255,0.6);">
+        
+        <div style="flex:1;">
+          <h2 style="font-size:3.2rem; margin-bottom:24px; color:var(--neon-cyan);">SUBJECT IDENTIFIED</h2>
+          <p style="font-size:1.25rem; line-height:1.9; color:#cbd5e1;">
+            Teuku Rijul adalah operative siber kelas atas dengan track record tinggi di bidang offensive security. 
+            Beroperasi di bawah radar dengan presisi militer.
+          </p>
+          <div class="terminal" style="margin-top:30px;">
+            <p style="color:#22ff88;">$ status rijul --access</p>
+            <p style="color:#00f0ff;">CLEARANCE LEVEL: GHOST-7</p>
+            <p style="color:#ff00aa;">THREAT LEVEL: EXTREME</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section class="section fade" data-fade>
-      <h2>Varian Jasa & Harga</h2>
-      <div class="cards">
-        <article class="card"><h3>Basic Service</h3><p>Layanan standar dengan hasil berkualitas.</p><div class="price">IDR 1.999.999</div></article>
-        <article class="card"><h3>Standard Service</h3><p>Fitur lebih lengkap, eksekusi lebih cepat.</p><div class="price">IDR 2.999.999</div></article>
-        <article class="card"><h3>Professional Service</h3><p>Fokus detail tinggi dan tingkat profesional.</p><div class="price">IDR 4.499.999</div></article>
-        <article class="card"><h3>Premium Service</h3><p>Layanan prioritas tertinggi, keamanan ekstra.</p><div class="price">IDR 5.999.999</div></article>
+  <!-- SERVICES -->
+  <section class="section" style="background:rgba(8,8,20,0.95);">
+    <div style="max-width:1300px; margin:0 auto;">
+      <h2 style="text-align:center; font-size:3rem; margin-bottom:80px; color:var(--neon-cyan);">AVAILABLE OPERATIONS</h2>
+      
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(380px,1fr)); gap:30px;">
+        <div class="glass service-card">
+          <h3 style="color:#ff00aa; font-size:1.8rem;">RED TEAM INVASION</h3>
+          <p style="margin:20px 0; color:#94a3b8;">Full-scale simulated cyber attack</p>
+          <div style="font-size:2.2rem; font-weight:700; color:#ff00aa;">Rp 6.500.000+</div>
+        </div>
+        
+        <div class="glass service-card">
+          <h3 style="color:var(--neon-cyan); font-size:1.8rem;">PENETRATION TESTING</h3>
+          <p style="margin:20px 0; color:#94a3b8;">Web • API • Infrastructure • Mobile</p>
+          <div style="font-size:2.2rem; font-weight:700; color:var(--neon-cyan);">Rp 3.750.000+</div>
+        </div>
+        
+        <div class="glass service-card">
+          <h3 style="color:var(--neon-purple); font-size:1.8rem;">GHOST FORENSICS</h3>
+          <p style="margin:20px 0; color:#94a3b8;">Digital investigation & recovery</p>
+          <div style="font-size:2.2rem; font-weight:700; color:var(--neon-purple);">Rp 8.000.000+</div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SOCIALS -->
-    <section class="section fade" data-fade>
-      <h2>Sosial Media</h2>
-      <div class="socials">
-        <a href="https://www.facebook.com/share/1BsavFiyEV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" /></a>
-        <a href="https://www.instagram.com/teuku_rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" /></a>
-        <a href="https://www.tiktok.com/@teuku.rijul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" /></a>
-      </div>
-    </section>
+  <footer style="text-align:center; padding:100px 20px; background:#050507; border-top:1px solid #1e2937;">
+    <p style="color:#64748b;">© 2026 TEUKU RIJUL • ALL SYSTEMS SECURED</p>
+  </footer>
 
-    <!-- REVIEWS -->
-    <section class="section fade reviews" data-fade>
-      <h2>Ulasan</h2>
-      <div class="meta">Rating rata-rata: <strong>★★★★★</strong> — 3.000+ ulasan</div>
-      <div class="slider">
-        <div class="rev"><strong>Rahmat S.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Pelayanan sangat baik dan profesional. Sangat direkomendasikan!"</p></div>
-        <div class="rev"><strong>Andi P.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Kerja cepat dan rapi, hasil sangat bagus."</p></div>
-        <div class="rev"><strong>Dewi L.</strong><div style="margin:8px 0;color:#ffb400">★★★★★</div><p>"Profesional, bertanggung jawab, dan hasil memuaskan."</p></div>
-      </div>
-    </section>
-
-    <footer>© 2025 Teuku Rijul — Premium Freelancer. All Rights Reserved.</footer>
-  </main>
-
-  <!-- WhatsApp Floating -->
-  <a class="wa" href="https://wa.me/62895328323138" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" /></a>
+  <!-- WhatsApp -->
+  <a href="https://wa.me/62895328323138" target="_blank" 
+     style="position:fixed; bottom:40px; right:40px; background:#25D366; width:75px; height:75px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 50px rgba(37,211,102,0.8); z-index:1000; border:4px solid white;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="45" height="45" style="filter:brightness(0) invert(1);">
+  </a>
 
   <script>
-    // Fade animation
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e => {if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}});
-    },{threshold:0.2});
-    document.querySelectorAll('[data-fade]').forEach(el => io.observe(el));
-
-    // Auto-slider
-    const slider = document.querySelector('.slider');
-    if(slider){
-      let idx=0;
-      const items = slider.children;
-      const total = items.length;
-      setInterval(()=>{
-        idx=(idx+1)%total;
-        slider.scrollTo({left: idx*(items[0].offsetWidth+16), behavior:'smooth'});
-      }, 3000);
-    }
+    // GSAP Animations
+    gsap.from(".logo", { y: -100, opacity: 0, duration: 1.5, ease: "power4.out" });
+    gsap.from(".cta", { scale: 0.5, opacity: 0, duration: 1.2, delay: 0.8, ease: "back.out(1.7)" });
   </script>
 </body>
 </html>
