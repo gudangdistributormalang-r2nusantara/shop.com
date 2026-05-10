@@ -48,6 +48,52 @@ body:has(a:hover) #cursorTrail,body:has(button:hover) #cursorTrail{transform:tra
 /* ── CANVAS ── */
 #bgCanvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.6}
 
+/* ── HERO WATERMARK PHOTO ── */
+.hero-watermark{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  display:flex;align-items:flex-end;justify-content:flex-end;
+  padding-right:3vw;overflow:hidden;
+}
+.hero-watermark img{
+  height:96vh;max-height:860px;width:auto;
+  object-fit:contain;object-position:bottom center;
+  opacity:.11;
+  filter:grayscale(100%) contrast(1.25) brightness(1.15)
+    drop-shadow(0 0 80px rgba(0,255,204,.18));
+  mask-image:linear-gradient(
+    to right,
+    transparent 0%,rgba(0,0,0,.2) 12%,
+    rgba(0,0,0,.65) 30%,black 50%,black 78%,transparent 100%),
+    linear-gradient(to top,black 60%,transparent 100%);
+  -webkit-mask-image:linear-gradient(
+    to right,
+    transparent 0%,rgba(0,0,0,.2) 12%,
+    rgba(0,0,0,.65) 30%,black 50%,black 78%,transparent 100%),
+    linear-gradient(to top,black 60%,transparent 100%);
+  mask-composite:intersect;
+  -webkit-mask-composite:source-in;
+  animation:wmFloat 9s ease-in-out infinite;
+  transform-origin:bottom right;
+}
+@keyframes wmFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-16px) scale(1.012)}
+}
+.hero-watermark-halo{
+  position:absolute;right:0;bottom:0;
+  width:50vw;height:100vh;max-width:700px;
+  background:radial-gradient(ellipse at 80% 85%,rgba(0,255,204,.05) 0%,rgba(0,170,255,.03) 45%,transparent 72%);
+  pointer-events:none;z-index:0;
+  animation:haloBreath 7s ease-in-out infinite;
+}
+@keyframes haloBreath{
+  0%,100%{opacity:.5;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.1)}
+}
+/* hero content must sit above watermark */
+.hero-content{position:relative;z-index:3}
+.hero-grid,.hero-glow,.scroll-hint{z-index:2}
+
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3rem;transition:all .4s ease}
 nav.solid{background:rgba(3,4,10,.96);backdrop-filter:blur(24px);padding:.8rem 3rem;border-bottom:1px solid rgba(0,255,204,.07);box-shadow:0 4px 40px rgba(0,0,0,.6)}
@@ -120,9 +166,18 @@ section{position:relative;z-index:1;padding:7rem 2rem}
 .about{background:linear-gradient(180deg,var(--bg) 0%,var(--bg1) 100%)}
 .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}
 .about-img-wrap{position:relative}
-.about-img-frame{position:relative;border-radius:4px;overflow:hidden;border:1px solid rgba(0,255,204,.12)}
-.about-img-frame img{width:100%;height:480px;object-fit:cover;display:block;filter:saturate(.8);transition:filter .5s}
-.about-img-frame:hover img{filter:saturate(1)}
+.about-img-frame{position:relative;border-radius:4px;overflow:hidden;border:1px solid rgba(0,255,204,.15)}
+.about-img-frame img{
+  width:100%;height:520px;object-fit:cover;object-position:top center;
+  display:block;filter:saturate(.9) contrast(1.06) brightness(1.04);
+  transition:filter .5s,transform .5s;
+}
+.about-img-frame:hover img{filter:saturate(1.12) contrast(1.06) brightness(1.06);transform:scale(1.03)}
+.about-img-tint{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:linear-gradient(160deg,rgba(0,255,204,.07) 0%,rgba(0,170,255,.04) 50%,rgba(123,47,255,.06) 100%);
+  mix-blend-mode:screen;
+}
 .about-img-scan{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,255,204,.04) 50%,transparent 55%);animation:scanLine 4s ease-in-out infinite}
 @keyframes scanLine{0%,100%{transform:translateY(-100%)}50%{transform:translateY(100%)}}
 .about-img-corner{position:absolute;width:20px;height:20px;border-color:var(--c0);border-style:solid;opacity:.6}
@@ -294,6 +349,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid rgb
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
+  .hero-watermark,.hero-watermark-halo{display:none}
   .about-grid,.contact-grid{grid-template-columns:1fr}
   .about-badge.b2{display:none}
   .timeline::before{left:20px}
@@ -380,6 +436,11 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid rgb
 <section class="hero" id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
+  <!-- PREMIUM WATERMARK PHOTO -->
+  <div class="hero-watermark-halo"></div>
+  <div class="hero-watermark">
+    <img src="https://i.ibb.co.com/MyfCgcmP/IMG-20260510-152315-343.png" alt="Rizu Zaman Watermark" id="wmPhoto">
+  </div>
   <div class="hero-content">
     <div class="hero-tag"><span class="tag-prefix">// </span> CYBERSECURITY PROFESSIONAL <span class="tag-prefix"> //</span></div>
     <h1 class="hero-name">
@@ -433,7 +494,8 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid rgb
     <div class="about-grid">
       <div class="about-img-wrap">
         <div class="about-img-frame">
-          <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=80" alt="Rizu Zaman">
+          <img src="https://i.ibb.co.com/MyfCgcmP/IMG-20260510-152315-343.png" alt="Rizu Zaman">
+          <div class="about-img-tint"></div>
           <div class="about-img-scan"></div>
           <div class="about-img-corner tl"></div>
           <div class="about-img-corner tr"></div>
