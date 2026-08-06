@@ -1,988 +1,834 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rizu Zaman | Cyber Security Expert</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
---c0:#00ffcc;--c1:#0af;--c2:#7b2fff;--c3:#ff3e8a;
---bg:#03040a;--bg1:#060810;--bg2:#080c14;
---card:rgba(8,12,24,0.85);--cardBorder:rgba(0,255,204,0.08);
---text:#d4e8ff;--muted:#5a7fa0;
---glow0:0 0 20px rgba(0,255,204,0.4);
---glow1:0 0 40px rgba(0,255,204,0.6);
---font-display:'Orbitron',monospace;
---font-body:'Rajdhani',sans-serif;
---font-code:'JetBrains Mono',monospace;
-}
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--c0) var(--bg)}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--c0);border-radius:3px}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none}
+    <!-- ============================================
+    META & SEO LENGKAP
+    ============================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>R2 Nusantara — Distributor Rokok Grosir Malang Terpercaya</title>
+    <meta name="description" content="Distributor rokok grosir Malang. Katalog R2 (167 merek) & Resmi (66 merek). Harga slop kompetitif, gratis ongkir minimal 20 slop." />
+    <meta name="theme-color" content="#0a1628" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://r2nusantara.com/" />
 
-/* ── CURSOR ── */
-#cursor,#cursorTrail{position:fixed;pointer-events:none;z-index:99999;border-radius:50%;transition-property:transform;transition-timing-function:ease}
-#cursor{width:12px;height:12px;background:var(--c0);box-shadow:var(--glow1);transform:translate(-50%,-50%);transition-duration:.05s}
-#cursorTrail{width:32px;height:32px;border:1.5px solid rgba(0,255,204,0.4);transform:translate(-50%,-50%);transition-duration:.18s}
-body:has(a:hover) #cursor,body:has(button:hover) #cursor{transform:translate(-50%,-50%) scale(2.5);background:var(--c3)}
-body:has(a:hover) #cursorTrail,body:has(button:hover) #cursorTrail{transform:translate(-50%,-50%) scale(1.5);border-color:var(--c3)}
+    <!-- Open Graph -->
+    <meta property="og:title" content="R2 Nusantara — Distributor Rokok Grosir Malang" />
+    <meta property="og:description" content="Distributor rokok grosir Malang. Katalog R2 & Resmi. Harga slop kompetitif, gratis ongkir minimal 20 slop." />
+    <meta property="og:url" content="https://r2nusantara.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://r2nusantara.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="R2 Nusantara" />
 
-/* ── PRELOADER ── */
-#preloader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s ease,visibility 1s ease}
-#preloader.gone{opacity:0;visibility:hidden}
-.pl-hex{width:90px;height:90px;position:relative}
-.pl-hex svg{animation:plSpin 2s linear infinite}
-.pl-hex .pl-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.7rem;color:var(--c0)}
-.pl-label{font-family:var(--font-display);font-size:.6rem;letter-spacing:.4em;color:var(--muted);margin-top:1.5rem;animation:plPulse 1.4s ease-in-out infinite}
-@keyframes plSpin{to{transform:rotate(360deg)}}
-@keyframes plPulse{0%,100%{opacity:.3}50%{opacity:1}}
-.pl-bar{width:200px;height:2px;background:rgba(0,255,204,.1);margin-top:1rem;border-radius:1px;overflow:hidden}
-.pl-bar-fill{height:100%;background:linear-gradient(90deg,var(--c1),var(--c0),var(--c2));border-radius:1px;animation:plBar 2s ease-in-out forwards}
-@keyframes plBar{from{width:0}to{width:100%}}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="R2 Nusantara — Distributor Rokok Grosir Malang" />
+    <meta name="twitter:description" content="Distributor rokok grosir Malang. Katalog R2 & Resmi. Harga slop kompetitif, gratis ongkir." />
+    <meta name="twitter:image" content="https://r2nusantara.com/og-image.jpg" />
+    <meta name="twitter:site" content="@r2nusantara" />
 
-/* ── CANVAS ── */
-#bgCanvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.6}
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚬</text></svg>" />
+    <link rel="apple-touch-icon" href="https://r2nusantara.com/icon-192.png" />
 
-/* ── HERO WATERMARK PHOTO ── */
-.hero-watermark{
-  position:absolute;inset:0;z-index:1;pointer-events:none;
-  display:flex;align-items:flex-end;justify-content:flex-end;
-  padding-right:3vw;overflow:hidden;
-}
-.hero-watermark img{
-  height:96vh;max-height:860px;width:auto;
-  object-fit:contain;object-position:bottom center;
-  opacity:.11;
-  filter:grayscale(100%) contrast(1.25) brightness(1.15)
-    drop-shadow(0 0 80px rgba(0,255,204,.18));
-  mask-image:linear-gradient(
-    to right,
-    transparent 0%,rgba(0,0,0,.2) 12%,
-    rgba(0,0,0,.65) 30%,black 50%,black 78%,transparent 100%),
-    linear-gradient(to top,black 60%,transparent 100%);
-  -webkit-mask-image:linear-gradient(
-    to right,
-    transparent 0%,rgba(0,0,0,.2) 12%,
-    rgba(0,0,0,.65) 30%,black 50%,black 78%,transparent 100%),
-    linear-gradient(to top,black 60%,transparent 100%);
-  mask-composite:intersect;
-  -webkit-mask-composite:source-in;
-  animation:wmFloat 9s ease-in-out infinite;
-  transform-origin:bottom right;
-}
-@keyframes wmFloat{
-  0%,100%{transform:translateY(0) scale(1)}
-  50%{transform:translateY(-16px) scale(1.012)}
-}
-.hero-watermark-halo{
-  position:absolute;right:0;bottom:0;
-  width:50vw;height:100vh;max-width:700px;
-  background:radial-gradient(ellipse at 80% 85%,rgba(0,255,204,.05) 0%,rgba(0,170,255,.03) 45%,transparent 72%);
-  pointer-events:none;z-index:0;
-  animation:haloBreath 7s ease-in-out infinite;
-}
-@keyframes haloBreath{
-  0%,100%{opacity:.5;transform:scale(1)}
-  50%{opacity:1;transform:scale(1.1)}
-}
-/* hero content must sit above watermark */
-.hero-content{position:relative;z-index:3}
-.hero-grid,.hero-glow,.scroll-hint{z-index:2}
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3rem;transition:all .4s ease}
-nav.solid{background:rgba(3,4,10,.96);backdrop-filter:blur(24px);padding:.8rem 3rem;border-bottom:1px solid rgba(0,255,204,.07);box-shadow:0 4px 40px rgba(0,0,0,.6)}
-.nav-wrap{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--c0);text-decoration:none;letter-spacing:.15em;text-shadow:var(--glow0);display:flex;align-items:center;gap:.6rem}
-.logo-bracket{color:var(--muted)}
-.logo-dot{width:6px;height:6px;border-radius:50%;background:var(--c0);box-shadow:var(--glow0);animation:logoBlink 2s ease-in-out infinite}
-@keyframes logoBlink{0%,100%{opacity:1}50%{opacity:.2}}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-family:var(--font-display);color:var(--muted);text-decoration:none;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;transition:all .3s;position:relative;padding:.4rem 0}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--c0);box-shadow:var(--glow0);transition:width .3s}
-.nav-links a:hover,.nav-links a.on{color:var(--c0)}
-.nav-links a:hover::after,.nav-links a.on::after{width:100%}
-.nav-cta{font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;padding:.6rem 1.4rem;border:1px solid rgba(0,255,204,.3);color:var(--c0);background:rgba(0,255,204,.05);border-radius:4px;cursor:pointer;transition:all .3s;text-decoration:none;text-transform:uppercase}
-.nav-cta:hover{background:rgba(0,255,204,.12);box-shadow:var(--glow0)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
-.hamburger span{width:22px;height:1.5px;background:var(--c0);transition:all .3s;display:block}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
-.mobile-nav{display:none;position:fixed;inset:0;background:rgba(3,4,10,.98);backdrop-filter:blur(30px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-family:var(--font-display);color:var(--c0);text-decoration:none;font-size:1.2rem;letter-spacing:.2em;text-transform:uppercase}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 2rem}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,204,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,204,.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
-.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,204,.06) 0%,transparent 70%);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:heroGlow 6s ease-in-out infinite}
-@keyframes heroGlow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.2)}}
-.hero-content{position:relative;z-index:2;text-align:center;max-width:950px}
-.hero-tag{display:inline-flex;align-items:center;gap:.8rem;padding:.5rem 1.4rem;border:1px solid rgba(0,255,204,.2);border-radius:2px;background:rgba(0,255,204,.04);margin-bottom:2rem;font-family:var(--font-code);font-size:.7rem;color:var(--c0);letter-spacing:.15em;animation:fadeUp 1s ease .2s both}
-.tag-prefix{color:var(--muted)}
-.hero-name{font-family:var(--font-display);font-size:clamp(3rem,8vw,6.5rem);font-weight:900;line-height:1;letter-spacing:.06em;margin-bottom:.5rem;animation:fadeUp 1s ease .4s both}
-.hero-name .n1{color:var(--text);display:block}
-.hero-name .n2{background:linear-gradient(135deg,var(--c0) 0%,var(--c1) 50%,var(--c2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;filter:drop-shadow(0 0 30px rgba(0,255,204,.3))}
-.hero-role{font-family:var(--font-code);font-size:clamp(.9rem,2vw,1.1rem);color:var(--muted);margin-bottom:2rem;animation:fadeUp 1s ease .6s both;min-height:1.8em}
-.typed{color:var(--c0);font-weight:600}
-.cursor-bar{display:inline-block;width:2px;height:1em;background:var(--c0);margin-left:2px;vertical-align:middle;animation:curBlink .7s step-end infinite}
-@keyframes curBlink{0%,100%{opacity:1}50%{opacity:0}}
-.hero-desc{font-size:1.1rem;color:var(--muted);line-height:1.9;max-width:580px;margin:0 auto 2.5rem;animation:fadeUp 1s ease .8s both}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease 1s both}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2.2rem;border-radius:3px;font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .35s;border:none;position:relative;overflow:hidden}
-.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);transform:translateX(-100%);transition:transform .5s}
-.btn:hover::before{transform:translateX(100%)}
-.btn-solid{background:linear-gradient(135deg,var(--c0),var(--c1));color:#030408;font-weight:700}
-.btn-solid:hover{box-shadow:0 8px 32px rgba(0,255,204,.35);transform:translateY(-3px)}
-.btn-ghost{background:transparent;color:var(--c0);border:1px solid rgba(0,255,204,.3)}
-.btn-ghost:hover{background:rgba(0,255,204,.08);box-shadow:var(--glow0);transform:translateY(-3px)}
-.hero-stats{display:flex;justify-content:center;gap:4rem;margin-top:5rem;animation:fadeUp 1s ease 1.2s both}
-.stat{text-align:center}
-.stat-n{font-family:var(--font-display);font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--c0),var(--c1));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 15px rgba(0,255,204,.4))}
-.stat-l{font-family:var(--font-code);font-size:.65rem;color:var(--muted);letter-spacing:.2em;margin-top:.3rem;text-transform:uppercase}
-.stat-divider{width:1px;background:linear-gradient(to bottom,transparent,rgba(0,255,204,.2),transparent);align-self:stretch}
-.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-family:var(--font-code);font-size:.6rem;letter-spacing:.2em;animation:fadeUp 1s ease 1.4s both}
-.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--c0),transparent);animation:scrollPulse 2s ease-in-out infinite}
-@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    <!-- ============================================
+    STRUCTURED DATA (JSON-LD @graph)
+    ============================================ -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [{
+                "@type": "Organization",
+                "@id": "https://r2nusantara.com/#organization",
+                "name": "R2 Nusantara",
+                "description": "Distributor rokok grosir terpercaya di Malang.",
+                "url": "https://r2nusantara.com/",
+                "logo": "https://r2nusantara.com/logo.png",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+62-812-3456-7890",
+                    "contactType": "Sales",
+                    "availableLanguage": ["Indonesian"]
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Malang",
+                    "addressRegion": "Jawa Timur",
+                    "addressCountry": "ID"
+                },
+                "sameAs": [
+                    "https://wa.me/6281234567890"
+                ]
+            }, {
+                "@type": "WebSite",
+                "@id": "https://r2nusantara.com/#website",
+                "url": "https://r2nusantara.com/",
+                "name": "R2 Nusantara",
+                "description": "Distributor rokok grosir Malang. Katalog R2 & Resmi.",
+                "publisher": { "@id": "https://r2nusantara.com/#organization" }
+            }, {
+                "@type": "Product",
+                "@id": "https://r2nusantara.com/#product-r2",
+                "name": "Katalog R2 Nusantara",
+                "description": "167 merek rokok lokal pilihan dengan harga kompetitif.",
+                "brand": { "@type": "Brand", "name": "R2 Nusantara" },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "IDR",
+                    "lowPrice": "65000",
+                    "highPrice": "230000",
+                    "offerCount": "167"
+                }
+            }, {
+                "@type": "Product",
+                "@id": "https://r2nusantara.com/#product-resmi",
+                "name": "Katalog Rokok Resmi",
+                "description": "66 merek nasional & internasional terbagi dalam 5 segmen.",
+                "brand": { "@type": "Brand", "name": "R2 Nusantara" },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "IDR",
+                    "lowPrice": "95000",
+                    "highPrice": "320000",
+                    "offerCount": "66"
+                }
+            }, {
+                "@type": "FAQPage",
+                "@id": "https://r2nusantara.com/#faq",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": "Bagaimana cara memesan?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pilih produk dari katalog R2 atau Resmi, tambahkan ke keranjang, lalu lanjutkan ke checkout. Kami akan menghubungi Anda via WhatsApp untuk konfirmasi."
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "Apakah harga sudah termasuk pajak?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ya, semua harga sudah termasuk PPN dan cukai sesuai ketentuan. Harga per slop."
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "Minimal pemesanan berapa?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Minimal 1 slop per produk. Untuk gratis ongkir minimal 20 slop (kombinasi produk)."
+                    }
+                }]
+            }]
+        }
+    </script>
 
-/* ── SECTIONS ── */
-section{position:relative;z-index:1;padding:7rem 2rem}
-.wrap{max-width:1200px;margin:0 auto}
-.sec-head{text-align:center;margin-bottom:5rem}
-.sec-kicker{font-family:var(--font-code);font-size:.65rem;color:var(--c0);letter-spacing:.35em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:.8rem}
-.sec-kicker::before,.sec-kicker::after{content:'';flex:0 0 30px;height:1px;background:var(--c0);opacity:.4}
-.sec-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:.05em}
-.sec-title .hi{background:linear-gradient(135deg,var(--c0),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.sec-rule{width:50px;height:2px;background:linear-gradient(90deg,var(--c0),var(--c2));margin:1.5rem auto 0;border-radius:1px}
-
-/* ── ABOUT ── */
-.about{background:linear-gradient(180deg,var(--bg) 0%,var(--bg1) 100%)}
-.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}
-.about-img-wrap{position:relative}
-.about-img-frame{position:relative;border-radius:4px;overflow:hidden;border:1px solid rgba(0,255,204,.15)}
-.about-img-frame img{
-  width:100%;height:520px;object-fit:cover;object-position:top center;
-  display:block;filter:saturate(.9) contrast(1.06) brightness(1.04);
-  transition:filter .5s,transform .5s;
-}
-.about-img-frame:hover img{filter:saturate(1.12) contrast(1.06) brightness(1.06);transform:scale(1.03)}
-.about-img-tint{
-  position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(160deg,rgba(0,255,204,.07) 0%,rgba(0,170,255,.04) 50%,rgba(123,47,255,.06) 100%);
-  mix-blend-mode:screen;
-}
-.about-img-scan{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,255,204,.04) 50%,transparent 55%);animation:scanLine 4s ease-in-out infinite}
-@keyframes scanLine{0%,100%{transform:translateY(-100%)}50%{transform:translateY(100%)}}
-.about-img-corner{position:absolute;width:20px;height:20px;border-color:var(--c0);border-style:solid;opacity:.6}
-.about-img-corner.tl{top:-1px;left:-1px;border-width:2px 0 0 2px}
-.about-img-corner.tr{top:-1px;right:-1px;border-width:2px 2px 0 0}
-.about-img-corner.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
-.about-img-corner.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
-.about-badge{position:absolute;background:rgba(3,4,10,.9);border:1px solid rgba(0,255,204,.2);border-radius:4px;padding:1rem 1.2rem;backdrop-filter:blur(16px)}
-.about-badge.b1{bottom:-24px;right:-24px;animation:floatBadge 3s ease-in-out infinite}
-.about-badge.b2{top:-24px;left:-24px;animation:floatBadge 3s ease-in-out infinite .8s}
-@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.badge-ico{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--c1),var(--c0));display:flex;align-items:center;justify-content:center;color:#030408;font-size:1rem;margin-bottom:.4rem}
-.badge-val{font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--text)}
-.badge-lbl{font-size:.7rem;color:var(--muted);font-family:var(--font-code);letter-spacing:.1em}
-.about-text h3{font-family:var(--font-display);font-size:1.6rem;font-weight:700;margin-bottom:1.2rem;letter-spacing:.05em}
-.about-text h3 span{color:var(--c0)}
-.about-text p{color:var(--muted);line-height:1.9;margin-bottom:1.2rem;font-size:1.05rem}
-.about-meta{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:2rem}
-.meta-row{display:flex;align-items:flex-start;gap:.7rem;padding:.8rem;background:rgba(0,255,204,.03);border:1px solid rgba(0,255,204,.06);border-radius:4px;transition:border-color .3s}
-.meta-row:hover{border-color:rgba(0,255,204,.15)}
-.meta-row i{color:var(--c0);font-size:.8rem;margin-top:.1rem;width:14px}
-.meta-key{font-size:.7rem;color:var(--muted);font-family:var(--font-code)}
-.meta-val{font-size:.9rem;color:var(--text);font-weight:500;margin-top:.1rem}
-
-/* ── SKILLS ── */
-.skills{background:var(--bg1)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
-.skill-card{background:var(--card);border:1px solid var(--cardBorder);border-radius:6px;padding:1.8rem;transition:all .4s;position:relative;overflow:hidden}
-.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c0),var(--c2));transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.skill-card:hover{border-color:rgba(0,255,204,.18);transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,0,.4)}
-.skill-card:hover::before{transform:scaleX(1)}
-.sk-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem}
-.sk-icon{width:46px;height:46px;border-radius:10px;background:rgba(0,255,204,.07);border:1px solid rgba(0,255,204,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--c0);flex-shrink:0;transition:all .4s}
-.skill-card:hover .sk-icon{background:linear-gradient(135deg,var(--c0),var(--c1));color:#030408;border-color:transparent}
-.sk-name{font-family:var(--font-display);font-size:.9rem;font-weight:700;letter-spacing:.05em}
-.sk-sub{font-family:var(--font-code);font-size:.65rem;color:var(--muted);margin-top:.2rem}
-.sk-pct-wrap{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
-.sk-pct-lbl{font-family:var(--font-code);font-size:.65rem;color:var(--muted)}
-.sk-pct-val{font-family:var(--font-display);font-size:.75rem;color:var(--c0)}
-.sk-bar{height:4px;background:rgba(255,255,255,.04);border-radius:2px;overflow:hidden;margin-bottom:1rem}
-.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--c1),var(--c0),var(--c2));width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
-.sk-tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.sk-tag{padding:.2rem .7rem;background:rgba(0,255,204,.04);border:1px solid rgba(0,255,204,.08);border-radius:2px;font-family:var(--font-code);font-size:.6rem;color:var(--muted)}
-
-/* ── SERVICES ── */
-.services{background:var(--bg)}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.svc-card{background:var(--card);border:1px solid var(--cardBorder);border-radius:6px;padding:2.2rem 1.8rem;text-align:center;transition:all .4s;position:relative;overflow:hidden;cursor:default}
-.svc-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,204,.05),rgba(123,47,255,.05));opacity:0;transition:opacity .4s}
-.svc-card:hover{border-color:rgba(0,255,204,.25);transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.svc-card:hover::after{opacity:1}
-.svc-num{position:absolute;top:1rem;right:1.2rem;font-family:var(--font-display);font-size:.6rem;color:rgba(0,255,204,.2);letter-spacing:.15em}
-.svc-ico{width:64px;height:64px;margin:0 auto 1.4rem;border-radius:14px;background:rgba(0,255,204,.06);border:1px solid rgba(0,255,204,.1);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:var(--c0);position:relative;z-index:1;transition:all .4s}
-.svc-card:hover .svc-ico{background:linear-gradient(135deg,var(--c0),var(--c1));color:#030408;transform:rotateY(180deg);border-color:transparent}
-.svc-title{font-family:var(--font-display);font-size:.9rem;font-weight:700;letter-spacing:.05em;margin-bottom:.8rem;position:relative;z-index:1}
-.svc-desc{color:var(--muted);font-size:.9rem;line-height:1.8;position:relative;z-index:1}
-.svc-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:1rem;position:relative;z-index:1}
-.svc-tag{padding:.2rem .6rem;background:rgba(0,255,204,.04);border:1px solid rgba(0,255,204,.08);border-radius:2px;font-family:var(--font-code);font-size:.6rem;color:var(--muted)}
-
-/* ── TIMELINE ── */
-.experience{background:var(--bg1)}
-.timeline{position:relative;max-width:820px;margin:0 auto}
-.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--c0),var(--c2),transparent);transform:translateX(-50%)}
-.tl-item{position:relative;padding:1.5rem 0;display:flex;align-items:flex-start}
-.tl-item:nth-child(odd){flex-direction:row-reverse}
-.tl-dot{position:absolute;left:50%;top:2rem;width:12px;height:12px;background:var(--c0);border-radius:50%;transform:translateX(-50%);box-shadow:var(--glow0);z-index:2}
-.tl-dot::after{content:'';position:absolute;inset:-5px;border:1px solid rgba(0,255,204,.25);border-radius:50%}
-.tl-box{width:44%;padding:1.4rem;background:var(--card);border:1px solid var(--cardBorder);border-radius:6px;transition:all .4s}
-.tl-box:hover{border-color:rgba(0,255,204,.2);transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,0,0,.35)}
-.tl-date{display:inline-block;padding:.25rem .7rem;background:rgba(0,255,204,.08);border:1px solid rgba(0,255,204,.15);color:var(--c0);border-radius:2px;font-family:var(--font-code);font-size:.6rem;letter-spacing:.1em;margin-bottom:.7rem}
-.tl-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:.3rem;letter-spacing:.03em}
-.tl-co{color:var(--c0);font-size:.85rem;margin-bottom:.6rem;font-family:var(--font-code)}
-.tl-desc{color:var(--muted);font-size:.88rem;line-height:1.75}
-
-/* ── CERTS ── */
-.certifications{background:var(--bg)}
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
-.cert-card{background:var(--card);border:1px solid var(--cardBorder);border-radius:6px;padding:1.4rem;text-align:center;transition:all .4s;position:relative;overflow:hidden}
-.cert-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,204,.04),rgba(0,170,255,.04));opacity:0;transition:opacity .4s}
-.cert-card:hover{border-color:rgba(0,255,204,.25);transform:translateY(-5px) scale(1.02);box-shadow:0 14px 45px rgba(0,0,0,.4)}
-.cert-card:hover::before{opacity:1}
-.cert-ico{width:54px;height:54px;margin:0 auto .8rem;border-radius:50%;background:rgba(0,255,204,.07);border:1px solid rgba(0,255,204,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--c0);position:relative;z-index:1}
-.cert-name{font-family:var(--font-display);font-size:.8rem;font-weight:700;margin-bottom:.3rem;position:relative;z-index:1;letter-spacing:.03em}
-.cert-issuer{color:var(--muted);font-size:.75rem;font-family:var(--font-code);position:relative;z-index:1}
-.cert-yr{color:var(--c0);font-family:var(--font-display);font-size:.65rem;margin-top:.4rem;position:relative;z-index:1}
-
-/* ── PROJECTS ── */
-.projects{background:var(--bg1)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.8rem}
-.proj-card{background:var(--card);border:1px solid var(--cardBorder);border-radius:6px;overflow:hidden;transition:all .4s}
-.proj-card:hover{border-color:rgba(0,255,204,.25);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
-.proj-img{height:190px;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(0,255,204,.06),rgba(123,47,255,.06))}
-.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:saturate(.7)}
-.proj-card:hover .proj-img img{transform:scale(1.08);filter:saturate(1)}
-.proj-img-over{position:absolute;inset:0;background:linear-gradient(to top,var(--card) 0%,transparent 100%)}
-.proj-badge{position:absolute;top:.8rem;right:.8rem;padding:.25rem .7rem;background:rgba(0,255,204,.15);border:1px solid rgba(0,255,204,.3);border-radius:2px;font-family:var(--font-display);font-size:.55rem;color:var(--c0);letter-spacing:.1em}
-.proj-body{padding:1.4rem}
-.proj-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:.5rem;letter-spacing:.03em}
-.proj-desc{color:var(--muted);font-size:.88rem;line-height:1.75;margin-bottom:.9rem}
-.proj-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
-.proj-tech span{padding:.2rem .6rem;background:rgba(0,255,204,.04);border:1px solid rgba(0,255,204,.08);border-radius:2px;font-family:var(--font-code);font-size:.6rem;color:var(--muted)}
-.proj-links{display:flex;gap:1rem}
-.proj-links a{font-family:var(--font-code);color:var(--c0);font-size:.7rem;text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:color .3s}
-.proj-links a:hover{color:var(--text)}
-
-/* ── TESTIMONIALS ── */
-.testimonials{background:var(--bg)}
-.testi-wrap{max-width:720px;margin:0 auto;position:relative}
-.testi-card{background:var(--card);border:1px solid rgba(0,255,204,.1);border-radius:8px;padding:2.5rem;text-align:center;display:none;animation:fadeIn .5s ease}
-.testi-card.on{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.testi-stars{color:var(--c0);margin-bottom:1.2rem;font-size:.9rem;letter-spacing:.2em}
-.testi-quote{font-size:1.1rem;color:var(--text);line-height:1.9;margin-bottom:1.5rem;font-style:italic}
-.testi-quote::before{content:'\201C';color:var(--c0);font-size:2rem;line-height:0;vertical-align:-0.5rem}
-.testi-author{font-family:var(--font-display);font-size:.75rem;letter-spacing:.12em;color:var(--c0)}
-.testi-role{font-family:var(--font-code);font-size:.65rem;color:var(--muted);margin-top:.3rem}
-.testi-controls{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2rem}
-.testi-btn{width:36px;height:36px;border:1px solid rgba(0,255,204,.2);background:transparent;color:var(--c0);border-radius:50%;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;font-size:.8rem}
-.testi-btn:hover{background:rgba(0,255,204,.1);box-shadow:var(--glow0)}
-.testi-dots{display:flex;gap:.5rem}
-.tdot{width:6px;height:6px;border-radius:50%;background:rgba(0,255,204,.2);border:none;cursor:pointer;transition:all .3s;padding:0}
-.tdot.on{background:var(--c0);width:20px;border-radius:3px}
-
-/* ── CONTACT ── */
-.contact{background:var(--bg1)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem}
-.contact-info h3{font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:1rem;letter-spacing:.05em}
-.contact-info h3 span{color:var(--c0)}
-.contact-info p{color:var(--muted);line-height:1.9;margin-bottom:2rem}
-.contact-item{display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(0,255,204,.03);border:1px solid var(--cardBorder);border-radius:4px;margin-bottom:.8rem;transition:border-color .3s;text-decoration:none}
-.contact-item:hover{border-color:rgba(0,255,204,.2)}
-.c-ico{width:38px;height:38px;background:rgba(0,255,204,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--c0);font-size:.9rem;flex-shrink:0}
-.c-lbl{font-family:var(--font-code);font-size:.6rem;color:var(--muted)}
-.c-val{font-size:.9rem;color:var(--text);font-weight:500;margin-top:.1rem}
-.socials{display:flex;gap:.8rem;margin-top:1.5rem}
-.social-btn{width:42px;height:42px;border:1px solid rgba(0,255,204,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1rem;text-decoration:none;transition:all .3s}
-.social-btn:hover{border-color:var(--c0);color:var(--c0);background:rgba(0,255,204,.06);box-shadow:var(--glow0)}
-.form-group{margin-bottom:1.2rem}
-.form-group label{font-family:var(--font-code);font-size:.65rem;color:var(--muted);letter-spacing:.1em;display:block;margin-bottom:.4rem}
-.form-group input,.form-group textarea{width:100%;padding:.85rem 1rem;background:rgba(0,255,204,.03);border:1px solid rgba(0,255,204,.1);border-radius:4px;color:var(--text);font-family:var(--font-body);font-size:.95rem;transition:border-color .3s,box-shadow .3s;outline:none;resize:none}
-.form-group input:focus,.form-group textarea:focus{border-color:rgba(0,255,204,.35);box-shadow:0 0 0 3px rgba(0,255,204,.06)}
-.form-group textarea{height:130px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-status{font-family:var(--font-code);font-size:.7rem;color:var(--c0);margin-top:.5rem;min-height:1rem}
-
-/* ── FOOTER ── */
-footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid rgba(0,255,204,.06);padding:2.5rem 2rem;text-align:center}
-.footer-logo{font-family:var(--font-display);font-size:1rem;color:var(--c0);letter-spacing:.2em;margin-bottom:.7rem}
-.footer-copy{font-family:var(--font-code);font-size:.65rem;color:var(--muted)}
-.footer-copy span{color:var(--c0)}
-
-/* ── BACK TO TOP ── */
-#btt{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;background:rgba(0,255,204,.1);border:1px solid rgba(0,255,204,.25);border-radius:6px;color:var(--c0);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:500;transition:all .3s;font-size:.9rem;opacity:0;pointer-events:none}
-#btt.show{opacity:1;pointer-events:all}
-#btt:hover{background:rgba(0,255,204,.2);box-shadow:var(--glow0);transform:translateY(-3px)}
-
-/* ── SECTION REVEAL ── */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-
-/* ── GLITCH ── */
-.glitch{position:relative;display:inline-block}
-.glitch::before,.glitch::after{content:attr(data-text);position:absolute;inset:0;background:var(--bg);pointer-events:none}
-.glitch::before{color:var(--c1);clip-path:polygon(0 0,100% 0,100% 40%,0 40%);animation:glA 4s infinite 2s;opacity:0}
-.glitch::after{color:var(--c3);clip-path:polygon(0 60%,100% 60%,100% 100%,0 100%);animation:glB 4s infinite 2.5s;opacity:0}
-.glitch:hover::before,.glitch:hover::after{opacity:1}
-@keyframes glA{0%,95%,100%{transform:translate(0)}96%{transform:translate(-3px,1px)}}
-@keyframes glB{0%,95%,100%{transform:translate(0)}96%{transform:translate(3px,-1px)}}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero-watermark,.hero-watermark-halo{display:none}
-  .about-grid,.contact-grid{grid-template-columns:1fr}
-  .about-badge.b2{display:none}
-  .timeline::before{left:20px}
-  .tl-item,.tl-item:nth-child(odd){flex-direction:row;padding-left:3rem}
-  .tl-dot{left:20px}
-  .tl-box{width:100%}
-  .hero-stats{gap:2rem}
-  .stat-divider{display:none}
-  nav{padding:1rem 1.5rem}
-  nav.solid{padding:.7rem 1.5rem}
-  .nav-links,.nav-cta{display:none}
-  .hamburger{display:flex}
-}
-@media(max-width:600px){
-  section{padding:5rem 1.2rem}
-  .hero{padding:0 1.2rem}
-  .form-row{grid-template-columns:1fr}
-  .hero-stats{flex-wrap:wrap;gap:1.5rem}
-  .skills-grid,.proj-grid{grid-template-columns:1fr}
-}
-</style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- CURSOR -->
-<div id="cursor"></div>
-<div id="cursorTrail"></div>
+    <!-- LOADER -->
+    <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white dark:bg-[#0a0f1a] transition-opacity duration-700">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-12 h-12 rounded-full border-4 border-brand-900 dark:border-white/20 border-t-brand-500 loader-spinner"></div>
+            <p class="text-sm font-bold text-brand-900 dark:text-white tracking-widest">R2 NUSANTARA</p>
+        </div>
+    </div>
 
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="pl-hex">
-    <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
-      <polygon points="45,5 82,24 82,66 45,85 8,66 8,24" stroke="rgba(0,255,204,0.2)" stroke-width="1" fill="none"/>
-      <polygon points="45,5 82,24 82,66 45,85 8,66 8,24" stroke="url(#plg)" stroke-width="2" fill="none" stroke-dasharray="240" stroke-dashoffset="0"/>
-      <defs>
-        <linearGradient id="plg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="90" y2="90">
-          <stop offset="0%" stop-color="#00ffcc"/>
-          <stop offset="100%" stop-color="#7b2fff"/>
-        </linearGradient>
-      </defs>
-    </svg>
-    <span class="pl-pct" id="plPct">0%</span>
-  </div>
-  <div class="pl-label">INITIALIZING SYSTEM</div>
-  <div class="pl-bar"><div class="pl-bar-fill"></div></div>
-</div>
+    <!-- TOAST -->
+    <div id="toast-container"></div>
 
-<!-- CANVAS BG -->
-<canvas id="bgCanvas"></canvas>
+    <!-- CIRCULAR SCROLL PROGRESS -->
+    <div id="scrollProgress" class="fixed bottom-24 right-4 z-40 w-12 h-12 rounded-full bg-white dark:bg-[#101827] border border-slate-200 dark:border-white/10 shadow-lg flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none">
+        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#e2e6ed" stroke-width="3" />
+            <circle id="progressCircle" cx="50" cy="50" r="42" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" style="stroke-dasharray: 263.89; stroke-dashoffset: 263.89; transition: stroke-dashoffset 0.15s ease;" />
+        </svg>
+        <span id="scrollPercent" class="absolute text-[9px] font-bold text-brand-900 dark:text-white">0%</span>
+    </div>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-wrap">
-    <a href="#hero" class="logo">
-      <div class="logo-dot"></div>
-      <span class="logo-bracket">[</span>RZ<span class="logo-bracket">]</span>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 glass-pill border-b border-white/20 dark:border-white/5" id="headerInner">
+        <div class="container flex items-center justify-between h-16 md:h-20">
+            <a href="#" class="flex items-center gap-2.5 group no-underline">
+                <span class="text-2xl font-black tracking-tighter premium-text-gradient">R2</span>
+                <span class="text-[10px] font-bold text-slate-400 dark:text-slate-500 hidden sm:inline">NUSANTARA</span>
+                <span class="inline-flex items-center gap-1 text-[9px] font-bold text-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/30">
+                    <i class="fa-solid fa-circle-check text-[8px]"></i> Grosir
+                </span>
+            </a>
+            <div class="flex items-center gap-1 sm:gap-2">
+                <button onclick="window.toggleDarkMode()" class="w-9 h-9 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors dark-mode-toggle-btn">
+                    <i id="darkModeIcon" class="fa-solid fa-moon text-[13px] sm:text-sm"></i>
+                </button>
+                <button onclick="window.toggleWishlistSidebar()" class="relative w-9 h-9 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-500 hover:text-red-500 transition-colors">
+                    <i class="fa-regular fa-heart text-sm"></i>
+                    <span id="wishlistBadge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-red-500 text-white text-[9px] font-bold flex items-center justify-center transition-transform duration-300 scale-0">0</span>
+                </button>
+                <button onclick="window.toggleCart()" class="relative w-9 h-9 rounded-xl bg-brand-900 dark:bg-brand-600 text-white flex items-center justify-center hover:bg-brand-700 dark:hover:bg-brand-700 transition-colors">
+                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-emerald-400 text-brand-900 text-[9px] font-bold flex items-center justify-center transition-transform duration-300 scale-0">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+    HERO
+    ============================================ -->
+    <section class="relative overflow-hidden hero-overlay min-h-[70vh] md:min-h-[80vh] flex items-center">
+        <div class="absolute inset-0 grid-pattern opacity-20"></div>
+        <div class="container relative z-10 py-12 md:py-20">
+            <div class="max-w-3xl">
+                <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="inline-flex items-center gap-2 text-[11px] font-bold text-emerald-300 bg-emerald-900/40 px-3 py-1 rounded-full border border-emerald-700/30 backdrop-blur-sm">
+                        <i class="fa-solid fa-bolt text-emerald-400"></i> Distributor Resmi
+                    </span>
+                    <span class="live-visitor-badge">
+                        <span class="dot"></span>
+                        <span id="visitorCount">0</span> online
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tighter mb-4">
+                    R2 <span class="premium-text-gradient">Nusantara</span>
+                </h1>
+                <p class="text-base md:text-lg text-slate-300 max-w-xl leading-relaxed mb-6">
+                    Distributor rokok grosir terpercaya di Malang. Katalog lengkap 167 merek R2 + 66 merek resmi.
+                    Harga slop kompetitif, margin maksimal.
+                </p>
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="#produk" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all shadow-lg shadow-brand-600/30 btn-glow">
+                        <i class="fa-solid fa-store"></i> Lihat Katalog
+                    </a>
+                    <a href="#testimoni" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold text-sm hover:bg-white/20 transition-all">
+                        <i class="fa-regular fa-comment"></i> Testimoni
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                    <div class="text-2xl font-black text-white" id="totalBrandCount">0</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Merek</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                    <div class="text-2xl font-black text-white" id="countR2">0</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Katalog R2</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                    <div class="text-2xl font-black text-white" id="countResmi">0</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Katalog Resmi</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                    <div class="text-2xl font-black text-white">24/7</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Layanan</div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f9fc] dark:from-[#0a0f1a] to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- ============================================
+    FEATURED COLLECTION — Editorial Layout Asimetris
+    ============================================ -->
+    <section id="featured" class="py-12 md:py-20 bg-[#f8f9fc] dark:bg-[#0a0f1a] transition-colors duration-500">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-10 fade-on-scroll">
+                <span class="inline-block text-[10px] font-bold text-brand-500 bg-brand-50 dark:bg-brand-900/30 px-4 py-1 rounded-full uppercase tracking-widest mb-3">Pilihan Editor</span>
+                <h2 class="text-2xl md:text-4xl font-black text-brand-900 dark:text-white">Koleksi <span class="premium-text-gradient">Unggulan</span></h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Produk pilihan dengan margin terbaik untuk grosir Anda.</p>
+            </div>
+
+            <!-- Layout asimetris: 1 besar kiri + 2 kecil kanan (atas/bawah) + 1 sedang -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-on-scroll">
+                <!-- Large item (kiri, span 2 kolom) -->
+                <div class="md:col-span-2 relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 card-premium group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/40 to-transparent z-10"></div>
+                    <div class="aspect-[16/9] md:aspect-[2/1] bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-6xl text-brand-500">🔥</div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[10px] font-bold bg-amber-500 text-white mb-2">R2 Premium</span>
+                        <h3 class="text-2xl font-black text-white mb-1">Absolute Bold</h3>
+                        <p class="text-sm text-slate-300">Rokok premium dengan cita rasa kuat, harga kompetitif.</p>
+                        <div class="mt-3 flex items-center gap-3">
+                            <span class="text-xl font-black text-white font-mono">Rp 118.000</span>
+                            <button onclick="window.__addCart('r2-1')" class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs hover:scale-105 transition-transform">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kecil atas (kanan) -->
+                <div class="relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 card-premium group">
+                    <div class="aspect-[4/3] bg-brand-50 dark:bg-brand-900/20 flex items-center justify-center text-4xl text-brand-500">🏅</div>
+                    <div class="p-4">
+                        <span class="inline-block px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 mb-1">Resmi · Segmen A</span>
+                        <h4 class="font-extrabold text-brand-900 dark:text-white text-base">Dji Sam Soe Filter</h4>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="font-black font-mono text-brand-900 dark:text-white">Rp 220.000</span>
+                            <button onclick="window.__addCart('resmi-4')" class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center hover:scale-105 transition-transform"><i class="fa-solid fa-plus text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kecil bawah (kanan) -->
+                <div class="relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 card-premium group">
+                    <div class="aspect-[4/3] bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-4xl text-amber-500">🌿</div>
+                    <div class="p-4">
+                        <span class="inline-block px-2 py-0.5 rounded text-[9px] font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 mb-1">R2 · Hemat</span>
+                        <h4 class="font-extrabold text-brand-900 dark:text-white text-base">Luffman Merah</h4>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="font-black font-mono text-brand-900 dark:text-white">Rp 68.000</span>
+                            <button onclick="window.__addCart('r2-89')" class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center hover:scale-105 transition-transform"><i class="fa-solid fa-plus text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sedang (baris kedua, span 2) -->
+                <div class="md:col-span-2 relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 card-premium group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-brand-900/30 to-transparent z-10"></div>
+                    <div class="aspect-[16/9] md:aspect-[3/1] bg-brand-50 dark:bg-brand-900/20 flex items-center justify-center text-5xl text-brand-500">🚀</div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                        <span class="inline-block px-2 py-0.5 rounded text-[9px] font-bold bg-violet-500 text-white mb-1">R2 Populer</span>
+                        <h3 class="text-xl font-black text-white">Neo Mild</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <span class="font-black font-mono text-white">Rp 220.000</span>
+                            <button onclick="window.__addCart('r2-117')" class="px-4 py-1.5 rounded-lg bg-white text-brand-900 font-bold text-xs hover:scale-105 transition-transform">Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kecil ketiga (kanan) -->
+                <div class="relative rounded-3xl overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 card-premium group">
+                    <div class="aspect-[4/3] bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-4xl text-emerald-500">🌍</div>
+                    <div class="p-4">
+                        <span class="inline-block px-2 py-0.5 rounded text-[9px] font-bold bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 mb-1">Resmi · Segmen D</span>
+                        <h4 class="font-extrabold text-brand-900 dark:text-white text-base">Marlboro Red</h4>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="font-black font-mono text-brand-900 dark:text-white">Rp 300.000</span>
+                            <button onclick="window.__addCart('resmi-10')" class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center hover:scale-105 transition-transform"><i class="fa-solid fa-plus text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    WHY R2
+    ============================================ -->
+    <section id="why" class="py-12 md:py-20 bg-white dark:bg-[#0a0f1a] transition-colors duration-500">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-12 fade-on-scroll">
+                <span class="inline-block text-[10px] font-bold text-brand-500 bg-brand-50 dark:bg-brand-900/30 px-4 py-1 rounded-full uppercase tracking-widest mb-3">Why R2</span>
+                <h2 class="text-2xl md:text-4xl font-black text-brand-900 dark:text-white">Distributor Pilihan <br class="sm:hidden" /><span class="premium-text-gradient">Grosir Malang</span></h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-3 text-sm">Solusi lengkap untuk kebutuhan rokok grosir dengan harga terbaik.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-[#f8f9fc] dark:bg-white/5 rounded-3xl p-6 border border-slate-200 dark:border-white/10 fade-on-scroll card-premium text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-2xl mx-auto mb-4">🔥</div>
+                    <h3 class="font-extrabold text-brand-900 dark:text-white text-lg mb-2">167+ Merek R2</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Katalog lokal dengan harga kompetitif. Hemat, Populer, Premium — semua tersedia.</p>
+                </div>
+                <div class="bg-[#f8f9fc] dark:bg-white/5 rounded-3xl p-6 border border-slate-200 dark:border-white/10 fade-on-scroll card-premium text-center" style="animation-delay:100ms">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center text-2xl mx-auto mb-4">🏅</div>
+                    <h3 class="font-extrabold text-brand-900 dark:text-white text-lg mb-2">66 Merek Resmi</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Brand nasional & internasional terbagi dalam 5 segmen. Harga grosir per slop.</p>
+                </div>
+                <div class="bg-[#f8f9fc] dark:bg-white/5 rounded-3xl p-6 border border-slate-200 dark:border-white/10 fade-on-scroll card-premium text-center" style="animation-delay:200ms">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-2xl mx-auto mb-4">🚚</div>
+                    <h3 class="font-extrabold text-brand-900 dark:text-white text-lg mb-2">Gratis Ongkir</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Minimal 20 slop. Subsidi ongkir untuk order grosir. Target tercapai otomatis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PRODUK — KATALOG
+    ============================================ -->
+    <section id="produk" class="py-12 md:py-20 bg-[#f8f9fc] dark:bg-[#0a0f1a] transition-colors duration-500">
+        <div class="container">
+
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 fade-on-scroll">
+                <div>
+                    <span class="inline-block text-[10px] font-bold text-brand-500 bg-brand-50 dark:bg-brand-900/30 px-4 py-1 rounded-full uppercase tracking-widest mb-2">Katalog</span>
+                    <h2 class="text-2xl md:text-3xl font-black text-brand-900 dark:text-white">Pilih <span class="premium-text-gradient">Katalog</span></h2>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <div class="catalog-tab-switcher" role="tablist">
+                        <button class="catalog-tab active" data-tab="r2" role="tab" aria-selected="true" onclick="window.switchCatalog('r2')">
+                            <i class="fa-solid fa-fire-flame-curved"></i> R2
+                            <span class="tab-count" id="r2TabCount">167</span>
+                        </button>
+                        <button class="catalog-tab" data-tab="resmi" role="tab" aria-selected="false" onclick="window.switchCatalog('resmi')">
+                            <i class="fa-solid fa-certificate"></i> Resmi
+                            <span class="tab-count" id="resmiTabCount">66</span>
+                        </button>
+                    </div>
+                    <div class="view-toggle-switcher">
+                        <button id="viewModeGridBtn" class="view-toggle-btn active" onclick="window.setViewMode('grid')"><i class="fa-solid fa-grip"></i></button>
+                        <button id="viewModeTableBtn" class="view-toggle-btn" onclick="window.setViewMode('table')"><i class="fa-solid fa-list"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="catalogInfoBanner" class="catalog-info-banner mb-6 fade-on-scroll">
+                <i id="catalogInfoIcon" class="fa-solid fa-fire-flame-curved text-lg text-brand-500"></i>
+                <div class="flex-1 min-w-0">
+                    <div id="catalogInfoTitle" class="font-extrabold text-brand-900 dark:text-white text-sm">Katalog R2 Nusantara</div>
+                    <div id="catalogInfoDesc" class="text-xs text-slate-500 dark:text-slate-400">167 merek lokal pilihan dengan harga kompetitif untuk margin maksimal.</div>
+                </div>
+                <span class="text-[10px] font-bold text-slate-400 hidden sm:block">Harga / slop</span>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 fade-on-scroll">
+                <div id="filterChipsContainer" class="flex flex-wrap items-center gap-2"></div>
+                <div class="flex items-center gap-3 flex-wrap">
+                    <div class="relative">
+                        <input id="searchInput" type="search" placeholder="Cari produk..." class="w-48 md:w-60 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm font-medium text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" />
+                        <div id="searchSuggestions" class="search-suggestions-box hidden"></div>
+                    </div>
+                    <select id="sortSelect" class="px-3 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm font-bold text-brand-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" onchange="window.applySort(this.value)">
+                        <option value="name-asc">Nama A-Z</option>
+                        <option value="price-asc">Harga ↑</option>
+                        <option value="price-desc">Harga ↓</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="activeFilterIndicator" class="hidden mb-4 text-xs font-bold text-brand-600 dark:text-brand-300 bg-brand-50 dark:bg-brand-900/30 px-4 py-2 rounded-xl inline-flex items-center gap-2 fade-on-scroll">
+                <i class="fa-solid fa-sliders"></i>
+                <span id="activeFilterText">Filter: Hemat</span>
+            </div>
+
+            <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"></div>
+            <div id="productTableWrap" class="product-table-wrap hidden">
+                <div class="product-table-head">
+                    <span>Nama Produk</span>
+                    <span>Harga</span>
+                    <span class="hidden md:block">ID</span>
+                    <span class="text-right">Aksi</span>
+                </div>
+                <div id="productTableBody"></div>
+            </div>
+            <div id="noProductFound" class="no-product-empty hidden">
+                <i class="fa-solid fa-box-open text-4xl text-slate-300 mb-4"></i>
+                <p class="font-bold text-slate-600 dark:text-slate-400">Produk tidak ditemukan</p>
+            </div>
+            <div id="paginationContainer" class="flex items-center justify-center gap-2 mt-8"></div>
+
+            <div id="shippingProgressBanner" class="mt-8 bg-brand-900 rounded-2xl p-4 md:p-6 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 fade-on-scroll">
+                <div>
+                    <div id="bannerTitle" class="font-extrabold text-sm">Target Gratis Ongkir</div>
+                    <div id="bannerSubtitle" class="text-xs text-slate-300 mt-0.5">Pilih <b class="text-emerald-300">20 slop</b> lagi untuk subsidi.</div>
+                </div>
+                <div class="flex items-center gap-4 w-full md:w-auto">
+                    <span class="text-2xl font-black font-mono" id="bannerQty">0</span>
+                    <div class="flex-1 md:w-48 h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div id="progressFill" class="h-full bg-emerald-400 rounded-full transition-all duration-700" style="width:0%"></div>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-300">/ 20</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    TESTIMONIAL
+    ============================================ -->
+    <section id="testimoni" class="py-12 md:py-20 bg-white dark:bg-[#0a0f1a] transition-colors duration-500">
+        <div class="container">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 fade-on-scroll">
+                <div>
+                    <span class="inline-block text-[10px] font-bold text-brand-500 bg-brand-50 dark:bg-brand-900/30 px-4 py-1 rounded-full uppercase tracking-widest mb-2">Testimoni</span>
+                    <h2 class="text-2xl md:text-3xl font-black text-brand-900 dark:text-white">Apa Kata <span class="premium-text-gradient">Pelanggan</span></h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="sliderPrevBtn" class="slider-nav-btn"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                    <button id="sliderNextBtn" class="slider-nav-btn"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                    <button onclick="window.openReviewModal()" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-pen"></i> Tulis Ulasan
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div id="testimonialSlider" class="testimonial-slider-container no-scrollbar">
+                    <!-- Static testimonials will be populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FAQ
+    ============================================ -->
+    <section id="faq" class="py-12 md:py-20 bg-[#f8f9fc] dark:bg-[#0a0f1a] transition-colors duration-500">
+        <div class="container max-w-3xl">
+            <div class="text-center mb-10 fade-on-scroll">
+                <span class="inline-block text-[10px] font-bold text-brand-500 bg-brand-50 dark:bg-brand-900/30 px-4 py-1 rounded-full uppercase tracking-widest mb-2">FAQ</span>
+                <h2 class="text-2xl md:text-3xl font-black text-brand-900 dark:text-white">Pertanyaan <span class="premium-text-gradient">Umum</span></h2>
+            </div>
+            <div class="space-y-3">
+                <details class="faq-item bg-white dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 p-4 md:p-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-brand-900 dark:text-white text-sm">
+                        <span>Bagaimana cara memesan?</span>
+                        <i class="fa-solid fa-plus faq-icon text-slate-400 text-xs"></i>
+                    </summary>
+                    <div class="faq-content text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Pilih produk dari katalog R2 atau Resmi, tambahkan ke keranjang, lalu lanjutkan ke checkout. Kami akan menghubungi Anda via WhatsApp untuk konfirmasi.</div>
+                </details>
+                <details class="faq-item bg-white dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 p-4 md:p-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-brand-900 dark:text-white text-sm">
+                        <span>Apakah harga sudah termasuk pajak?</span>
+                        <i class="fa-solid fa-plus faq-icon text-slate-400 text-xs"></i>
+                    </summary>
+                    <div class="faq-content text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Ya, semua harga sudah termasuk PPN dan cukai sesuai ketentuan. Harga per slop.</div>
+                </details>
+                <details class="faq-item bg-white dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 p-4 md:p-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-brand-900 dark:text-white text-sm">
+                        <span>Minimal pemesanan berapa?</span>
+                        <i class="fa-solid fa-plus faq-icon text-slate-400 text-xs"></i>
+                    </summary>
+                    <div class="faq-content text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Minimal 1 slop per produk. Untuk gratis ongkir minimal 20 slop (kombinasi produk).</div>
+                </details>
+                <details class="faq-item bg-white dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 p-4 md:p-6">
+                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-brand-900 dark:text-white text-sm">
+                        <span>Apakah bisa kirim ke luar Malang?</span>
+                        <i class="fa-solid fa-plus faq-icon text-slate-400 text-xs"></i>
+                    </summary>
+                    <div class="faq-content text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Ya, kami melayani pengiriman ke seluruh Indonesia dengan ekspedisi pilihan. Ongkir akan dihitung saat checkout.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer-enterprise pt-12 pb-24 md:pb-6">
+        <div class="container">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl font-black premium-text-gradient">R2</span>
+                        <span class="text-[10px] font-bold text-slate-500">NUSANTARA</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed max-w-xs">Distributor rokok grosir terpercaya di Malang. Menyediakan katalog R2 dan Resmi dengan harga kompetitif.</p>
+                    <div class="flex items-center gap-2 mt-4">
+                        <span class="badge-pill"><i class="fa-solid fa-location-dot text-emerald-400"></i> Malang, Indonesia</span>
+                        <span class="badge-pill"><i class="fa-regular fa-clock"></i> 24/7</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Katalog</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#produk" class="footer-link no-underline" onclick="window.switchCatalog('r2')">R2 Nusantara</a></li>
+                        <li><a href="#produk" class="footer-link no-underline" onclick="window.switchCatalog('resmi')">Katalog Resmi</a></li>
+                        <li><a href="#produk" class="footer-link no-underline">Semua Produk</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Layanan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#why" class="footer-link no-underline">Tentang Kami</a></li>
+                        <li><a href="#testimoni" class="footer-link no-underline">Testimoni</a></li>
+                        <li><a href="#faq" class="footer-link no-underline">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Kontak</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="sales-card">
+                            <div class="flex items-center gap-2"><div class="sales-avatar avatar-gradient-9">A</div><div><div class="font-bold text-white text-xs">Admin R2</div><div class="text-[10px] text-slate-500">+62 812 3456 7890</div></div></div>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="wa-circle no-underline"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="region-tag"><i class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp</span>
+                            <span class="region-tag"><i class="fa-regular fa-envelope"></i> r2@distributor.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-slate-500">
+                <span>&copy; 2026 R2 Nusantara. All rights reserved.</span>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-shield text-emerald-400"></i> Aman & Terpercaya</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-credit-card text-brand-400"></i> Pembayaran Aman</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    BACK TO TOP
+    ============================================ -->
+    <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+
+    <!-- ============================================
+    WHATSAPP FLOATING BUTTON PREMIUM
+    ============================================ -->
+    <a id="waFloatBtn" href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-4 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center wa-float-btn pulse-ring" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white dark:border-[#0a0f1a] animate-pulse"></span>
+        <span class="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-0"></span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#about" class="navlink">About</a></li>
-      <li><a href="#skills" class="navlink">Skills</a></li>
-      <li><a href="#services" class="navlink">Services</a></li>
-      <li><a href="#experience" class="navlink">Experience</a></li>
-      <li><a href="#projects" class="navlink">Projects</a></li>
-      <li><a href="#contact" class="navlink">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Hire Me</a>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about" class="mnl">About</a>
-  <a href="#skills" class="mnl">Skills</a>
-  <a href="#services" class="mnl">Services</a>
-  <a href="#experience" class="mnl">Experience</a>
-  <a href="#projects" class="mnl">Projects</a>
-  <a href="#contact" class="mnl">Contact</a>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <!-- PREMIUM WATERMARK PHOTO -->
-  <div class="hero-watermark-halo"></div>
-  <div class="hero-watermark">
-    <img src="https://i.ibb.co.com/MyfCgcmP/IMG-20260510-152315-343.png" alt="Rizu Zaman Watermark" id="wmPhoto">
-  </div>
-  <div class="hero-content">
-    <div class="hero-tag"><span class="tag-prefix">// </span> CYBERSECURITY PROFESSIONAL <span class="tag-prefix"> //</span></div>
-    <h1 class="hero-name">
-      <span class="n1">RIZU</span>
-      <span class="n2 glitch" data-text="ZAMAN">ZAMAN</span>
-    </h1>
-    <div class="hero-role">
-      <span class="typed" id="typedText"></span><span class="cursor-bar"></span>
-    </div>
-    <p class="hero-desc">Defending digital frontiers with cutting-edge offensive security methodologies, threat intelligence, and zero-trust architecture. Your last line of defense.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-solid"><i class="fas fa-shield-halved"></i> View My Work</a>
-      <a href="#contact" class="btn btn-ghost"><i class="fas fa-terminal"></i> Get In Touch</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-n" id="sn1">0</div>
-        <div class="stat-l">Years Active</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-n" id="sn2">0</div>
-        <div class="stat-l">Projects Done</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-n" id="sn3">0</div>
-        <div class="stat-l">CVEs Found</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-n" id="sn4">0</div>
-        <div class="stat-l">Certifications</div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span>SCROLL</span>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about reveal" id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">01. WHO I AM</div>
-      <h2 class="sec-title">About <span class="hi">Me</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-img-wrap">
-        <div class="about-img-frame">
-          <img src="https://i.ibb.co.com/MyfCgcmP/IMG-20260510-152315-343.png" alt="Rizu Zaman">
-          <div class="about-img-tint"></div>
-          <div class="about-img-scan"></div>
-          <div class="about-img-corner tl"></div>
-          <div class="about-img-corner tr"></div>
-          <div class="about-img-corner bl"></div>
-          <div class="about-img-corner br"></div>
-        </div>
-        <div class="about-badge b1">
-          <div class="badge-ico"><i class="fas fa-bug"></i></div>
-          <div class="badge-val">120+</div>
-          <div class="badge-lbl">Vulns Discovered</div>
-        </div>
-        <div class="about-badge b2">
-          <div class="badge-ico"><i class="fas fa-medal"></i></div>
-          <div class="badge-val">Top 1%</div>
-          <div class="badge-lbl">Global Ranking</div>
-        </div>
-      </div>
-      <div class="about-text">
-        <h3>Cyber Security <span>Expert</span> & Ethical Hacker</h3>
-        <p>With over 8 years in offensive and defensive security, I specialize in penetration testing, red team operations, and building robust security architectures for enterprise environments. I've worked across finance, healthcare, and government sectors.</p>
-        <p>I hold multiple industry-recognized certifications and have been acknowledged by Fortune 500 companies for responsible vulnerability disclosures. My approach combines technical precision with strategic threat modeling.</p>
-        <div class="about-meta">
-          <div class="meta-row"><i class="fas fa-user"></i><div><div class="meta-key">Full Name</div><div class="meta-val">Rizu Zaman</div></div></div>
-          <div class="meta-row"><i class="fas fa-map-pin"></i><div><div class="meta-key">Location</div><div class="meta-val">Dhaka, Bangladesh</div></div></div>
-          <div class="meta-row"><i class="fas fa-envelope"></i><div><div class="meta-key">Email</div><div class="meta-val">rizu@secops.io</div></div></div>
-          <div class="meta-row"><i class="fas fa-circle-check"></i><div><div class="meta-key">Status</div><div class="meta-val" style="color:var(--c0)">Available for hire</div></div></div>
-          <div class="meta-row"><i class="fas fa-briefcase"></i><div><div class="meta-key">Experience</div><div class="meta-val">8+ Years</div></div></div>
-          <div class="meta-row"><i class="fas fa-graduation-cap"></i><div><div class="meta-key">Degree</div><div class="meta-val">B.Sc. Computer Science</div></div></div>
-        </div>
-        <div class="hero-btns" style="justify-content:flex-start">
-          <a href="#" class="btn btn-solid" style="font-size:.58rem"><i class="fas fa-download"></i> Download CV</a>
-          <a href="#contact" class="btn btn-ghost" style="font-size:.58rem"><i class="fas fa-paper-plane"></i> Contact Me</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="skills reveal" id="skills">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">02. EXPERTISE</div>
-      <h2 class="sec-title">Core <span class="hi">Skills</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="skills-grid" id="skillsGrid">
-      <!-- Cards injected by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services reveal" id="services">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">03. WHAT I DO</div>
-      <h2 class="sec-title">My <span class="hi">Services</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="svc-grid" id="svcGrid"></div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="experience reveal" id="experience">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">04. JOURNEY</div>
-      <h2 class="sec-title">Work <span class="hi">Experience</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="timeline" id="timeline"></div>
-  </div>
-</section>
-
-<!-- CERTS -->
-<section class="certifications reveal" id="certifications">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">05. CREDENTIALS</div>
-      <h2 class="sec-title">Certifications <span class="hi">& Awards</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="cert-grid" id="certGrid"></div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="projects reveal" id="projects">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">06. PORTFOLIO</div>
-      <h2 class="sec-title">Featured <span class="hi">Projects</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="proj-grid" id="projGrid"></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials reveal" id="testimonials">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">07. SOCIAL PROOF</div>
-      <h2 class="sec-title">Client <span class="hi">Testimonials</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="testi-wrap">
-      <div id="testiCards"></div>
-      <div class="testi-controls">
-        <button class="testi-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
-        <div class="testi-dots" id="testiDots"></div>
-        <button class="testi-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact reveal" id="contact">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-kicker">08. CONNECT</div>
-      <h2 class="sec-title">Get In <span class="hi">Touch</span></h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Let's <span>Collaborate</span></h3>
-        <p>Whether you need a penetration test, security audit, incident response, or just want to discuss the latest threat landscape — I'm here. Reach out and let's secure your digital assets.</p>
-        <a href="mailto:rizu@secops.io" class="contact-item">
-          <div class="c-ico"><i class="fas fa-envelope"></i></div>
-          <div><div class="c-lbl">EMAIL</div><div class="c-val">rizu@secops.io</div></div>
+    <!-- ============================================
+    MOBILE BOTTOM NAVIGATION
+    ============================================ -->
+    <nav id="bottomNav" class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-pill border-t border-white/20 dark:border-white/5 px-2 py-2 flex items-center justify-around safe-area-bottom">
+        <a href="#" class="bottom-nav-item flex flex-col items-center gap-0.5 text-[9px] font-bold text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors no-underline">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span>Beranda</span>
         </a>
-        <a href="tel:+8801XXXXXXXXX" class="contact-item">
-          <div class="c-ico"><i class="fas fa-phone"></i></div>
-          <div><div class="c-lbl">PHONE</div><div class="c-val">+880 1X XX-XXXXXX</div></div>
+        <a href="#produk" class="bottom-nav-item flex flex-col items-center gap-0.5 text-[9px] font-bold text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors no-underline">
+            <i class="fa-solid fa-store text-lg"></i>
+            <span>Katalog</span>
         </a>
-        <div class="contact-item" style="cursor:default">
-          <div class="c-ico"><i class="fas fa-map-marker-alt"></i></div>
-          <div><div class="c-lbl">LOCATION</div><div class="c-val">Dhaka, Bangladesh</div></div>
+        <button onclick="window.toggleCart()" class="bottom-nav-item flex flex-col items-center gap-0.5 text-[9px] font-bold text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors bg-transparent border-none relative">
+            <i class="fa-solid fa-cart-shopping text-lg"></i>
+            <span>Keranjang</span>
+            <span id="bottomCartBadge" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-emerald-400 text-brand-900 text-[8px] font-bold flex items-center justify-center scale-0 transition-transform">0</span>
+        </button>
+        <button onclick="window.toggleWishlistSidebar()" class="bottom-nav-item flex flex-col items-center gap-0.5 text-[9px] font-bold text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors bg-transparent border-none relative">
+            <i class="fa-regular fa-heart text-lg"></i>
+            <span>Wishlist</span>
+            <span id="bottomWishlistBadge" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-red-500 text-white text-[8px] font-bold flex items-center justify-center scale-0 transition-transform">0</span>
+        </button>
+        <a href="https://wa.me/6281234567890" target="_blank" class="bottom-nav-item flex flex-col items-center gap-0.5 text-[9px] font-bold text-slate-400 hover:text-emerald-500 transition-colors no-underline">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>WhatsApp</span>
+        </a>
+    </nav>
+
+    <!-- ============================================
+    SIDEBAR CART
+    ============================================ -->
+    <div id="cartOverlay" class="fixed inset-0 z-[70] bg-brand-900/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 pointer-events-none" onclick="window.toggleCart()"></div>
+    <div id="cartSidebar" class="fixed top-0 right-0 z-[80] h-full w-full max-w-md bg-white/95 dark:bg-[#0a0f1a]/95 backdrop-blur-xl shadow-2xl transform translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col glass-dark border-l border-white/10">
+        <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-white/10 shrink-0">
+            <span class="font-extrabold text-brand-900 dark:text-white text-sm flex items-center gap-2"><i class="fa-solid fa-cart-shopping text-brand-500"></i> Keranjang</span>
+            <button onclick="window.toggleCart()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <div class="socials">
-          <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-hackerrank"></i></a>
-          <a href="#" class="social-btn"><i class="fas fa-bug"></i></a>
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+        <div id="cartSummary" class="border-t border-slate-200 dark:border-white/10 p-4 shrink-0 hidden">
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total</span>
+                <div>
+                    <span id="totalItemsDisplay" class="text-xs font-bold text-slate-400 mr-2">0 item</span>
+                    <span id="totalPriceDisplay" class="text-xl font-black font-mono text-brand-900 dark:text-white">Rp0</span>
+                </div>
+            </div>
+            <button onclick="window.openCheckoutModal()" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 btn-glow">
+                <i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp
+            </button>
         </div>
-      </div>
-      <div>
-        <div class="form-row">
-          <div class="form-group"><label>YOUR NAME</label><input type="text" placeholder="John Doe" id="fName"></div>
-          <div class="form-group"><label>YOUR EMAIL</label><input type="email" placeholder="john@company.com" id="fEmail"></div>
-        </div>
-        <div class="form-group"><label>SUBJECT</label><input type="text" placeholder="Security Audit Request" id="fSubject"></div>
-        <div class="form-group"><label>MESSAGE</label><textarea placeholder="Describe your security needs..." id="fMsg"></textarea></div>
-        <button class="btn btn-solid" onclick="sendMsg()" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Message</button>
-        <div class="form-status" id="fStatus"></div>
-      </div>
     </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">[ RZ ] RIZU ZAMAN</div>
-  <div class="footer-copy">© 2025 Rizu Zaman. Crafted with <span>♥</span> & Security. All rights reserved.</div>
-</footer>
+    <!-- ============================================
+    SIDEBAR WISHLIST
+    ============================================ -->
+    <div id="wishlistOverlay" class="fixed inset-0 z-[70] bg-brand-900/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 pointer-events-none" onclick="window.toggleWishlistSidebar()"></div>
+    <div id="wishlistSidebar" class="fixed top-0 right-0 z-[80] h-full w-full max-w-md bg-white/95 dark:bg-[#0a0f1a]/95 backdrop-blur-xl shadow-2xl transform translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col glass-dark border-l border-white/10">
+        <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-white/10 shrink-0">
+            <span class="font-extrabold text-brand-900 dark:text-white text-sm flex items-center gap-2"><i class="fa-regular fa-heart text-red-400"></i> Wishlist</span>
+            <button onclick="window.toggleWishlistSidebar()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="wishlistItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+    </div>
 
-<!-- BACK TO TOP -->
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+    <!-- ============================================
+    QUICK VIEW MODAL
+    ============================================ -->
+    <div id="quickViewOverlay" class="fixed inset-0 z-[85] bg-brand-900/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 pointer-events-none" onclick="window.closeQuickView()"></div>
+    <div id="quickViewModal" class="fixed top-1/2 left-1/2 z-[90] w-[92%] max-w-lg bg-white dark:bg-[#0a0f1a] rounded-3xl shadow-2xl p-6 transform -translate-x-1/2 -translate-y-1/2 scale-95 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none">
+        <button onclick="window.closeQuickView()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+        <div class="flex flex-col gap-4">
+            <div id="qvBadge" class="inline-block px-3 py-1 rounded-lg text-xs font-bold">Populer</div>
+            <h3 id="qvTitle" class="text-xl font-extrabold text-brand-900 dark:text-white">Nama Produk</h3>
+            <p id="qvPrice" class="text-3xl font-black font-mono text-brand-900 dark:text-white">Rp0</p>
+            <p id="qvDesc" class="text-sm text-slate-500 dark:text-slate-400">Deskripsi produk</p>
+            <p class="text-[10px] font-mono text-slate-400">ID: <span id="qvId">-</span></p>
+            <div class="flex items-center gap-3 mt-2">
+                <button id="qvAddToCartBtn" class="flex-1 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all flex items-center justify-center gap-2"><i class="fa-solid fa-cart-plus"></i> Tambah ke Keranjang</button>
+                <button id="qvWishlistBtn" class="w-12 h-12 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors"><i class="fa-regular fa-heart"></i></button>
+            </div>
+        </div>
+    </div>
 
-<script>
-/* ══════════════════════════════════════════
-   DATA
-══════════════════════════════════════════ */
-const SKILLS = [
-  {icon:'fa-shield-halved',name:'Penetration Testing',sub:'Offensive Security',pct:95,tags:['Web','Network','Mobile','API','Cloud']},
-  {icon:'fa-network-wired',name:'Network Security',sub:'Infrastructure Defense',pct:92,tags:['Firewall','IDS/IPS','VPN','Zero Trust']},
-  {icon:'fa-bug',name:'Vulnerability Research',sub:'CVE Discovery & Analysis',pct:88,tags:['Reverse Eng.','Fuzzing','Exploit Dev']},
-  {icon:'fa-lock',name:'Cryptography',sub:'Protocols & Implementation',pct:84,tags:['TLS/SSL','PKI','AES','Zero-Knowledge']},
-  {icon:'fa-cloud',name:'Cloud Security',sub:'AWS · Azure · GCP',pct:87,tags:['IAM','CSPM','Container Sec.','DevSecOps']},
-  {icon:'fa-magnifying-glass-chart',name:'Threat Intelligence',sub:'SOC & SIEM Operations',pct:90,tags:['MITRE ATT&CK','OSINT','IOC Analysis']},
-];
+    <!-- ============================================
+    CHECKOUT MODAL
+    ============================================ -->
+    <div id="checkoutModalOverlay" class="fixed inset-0 z-[90] bg-brand-900/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 pointer-events-none" onclick="window.closeCheckoutModal()"></div>
+    <div id="checkoutModal" class="fixed top-1/2 left-1/2 z-[95] w-[94%] max-w-2xl bg-white dark:bg-[#0a0f1a] rounded-3xl shadow-2xl p-4 md:p-8 max-h-[90vh] overflow-y-auto transform -translate-x-1/2 -translate-y-1/2 scale-95 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none">
+        <button onclick="window.closeCheckoutModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+        <div class="mb-6">
+            <h3 class="text-xl font-extrabold text-brand-900 dark:text-white flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400"></i> Checkout</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Lengkapi data pesanan untuk melanjutkan ke WhatsApp</p>
+        </div>
+        <div class="flex items-center gap-2 mb-6 relative">
+            <div id="step1Indicator" class="flex items-center gap-2"><div class="w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 border-2 border-white ring-2 ring-slate-100 step-indicator active shadow-sm">1</div><span class="text-[9px] font-bold uppercase tracking-widest text-brand-900 dark:text-white">Data</span></div>
+            <div class="flex-1 h-0.5 bg-slate-200 dark:bg-white/10 relative"><div id="stepProgressLine" class="h-full bg-emerald-500 rounded-full transition-all duration-500" style="width:0%"></div></div>
+            <div id="step2Indicator" class="flex items-center gap-2"><div class="w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 border-2 border-white ring-2 ring-slate-100 step-indicator bg-slate-100 text-slate-400">2</div><span class="text-[9px] font-bold uppercase tracking-widest text-slate-400">Alamat</span></div>
+            <div class="flex-1 h-0.5 bg-slate-200 dark:bg-white/10"></div>
+            <div id="step3Indicator" class="flex items-center gap-2"><div class="w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 border-2 border-white ring-2 ring-slate-100 step-indicator bg-slate-100 text-slate-400">3</div><span class="text-[9px] font-bold uppercase tracking-widest text-slate-400">Kirim</span></div>
+        </div>
+        <form id="checkoutFormFull" class="space-y-4" onsubmit="event.preventDefault()">
+            <div data-step="1" class="space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Nama Lengkap</label>
+                        <input id="newCustName" type="text" placeholder="Nama pembeli" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                        <div id="newErrName" class="error-message"><i class="fa-solid fa-circle-exclamation"></i> <span>Minimal 2 karakter</span></div>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">No. HP (WA)</label>
+                        <input id="newCustPhone" type="tel" placeholder="812 3456 7890" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                        <div id="newErrPhone" class="error-message"><i class="fa-solid fa-circle-exclamation"></i> <span>Nomor tidak valid</span></div>
+                    </div>
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Alamat Lengkap</label>
+                    <textarea id="newAlamat" rows="2" placeholder="Jalan, RT/RW, Perumahan..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all resize-none" required></textarea>
+                    <div id="newErrAlamat" class="error-message"><i class="fa-solid fa-circle-exclamation"></i> <span>Minimal 20 karakter</span></div>
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Patokan</label>
+                    <input id="newPatokan" type="text" placeholder="Patokan (warung, masjid, dll)" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" />
+                </div>
+            </div>
+            <div data-step="2" class="space-y-3">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Provinsi</label>
+                        <input id="newProvinsi" type="text" placeholder="Provinsi" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Kota</label>
+                        <input id="newKota" type="text" placeholder="Kota/Kab" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Kecamatan</label>
+                        <input id="newKecamatan" type="text" placeholder="Kecamatan" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Kelurahan</label>
+                        <input id="newKelurahan" type="text" placeholder="Kelurahan/Desa" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Kode Pos</label>
+                        <input id="newKodePos" type="text" placeholder="Kode Pos" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                    </div>
+                </div>
+            </div>
+            <div data-step="3" class="space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Ekspedisi</label>
+                        <select id="newEkspedisi" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required>
+                            <option value="">Pilih</option>
+                            <option value="JNE">JNE</option>
+                            <option value="J&T">J&T</option>
+                            <option value="SiCepat">SiCepat</option>
+                            <option value="Anteraja">Anteraja</option>
+                            <option value="Lion Parcel">Lion Parcel</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Pembayaran</label>
+                        <select id="newMetode" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required>
+                            <option value="">Pilih</option>
+                            <option value="Transfer Bank">Transfer Bank</option>
+                            <option value="QRIS">QRIS</option>
+                            <option value="Cash">Cash</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Admin WhatsApp</label>
+                        <select id="newAdmin" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required>
+                            <option value="">Pilih Admin</option>
+                            <option value="6281234567890">Admin 1 (+62 812 3456 7890)</option>
+                            <option value="6281234567891">Admin 2 (+62 812 3456 7891)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bg-slate-50 dark:bg-white/5 rounded-xl p-4">
+                    <div class="flex justify-between text-sm font-bold text-brand-900 dark:text-white">
+                        <span>Total Order</span>
+                        <span id="modalTotalPrice" class="font-mono">Rp0</span>
+                    </div>
+                </div>
+                <button id="finalCheckoutBtn" type="button" onclick="window.submitOrder()" disabled class="w-full py-3.5 rounded-xl bg-slate-200 dark:bg-white/10 text-slate-400 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                    <i id="finalBtnIcon" class="fa-brands fa-whatsapp text-lg"></i>
+                    <span id="finalBtnText">Konfirmasi Pesanan</span>
+                </button>
+            </div>
+        </form>
+    </div>
 
-const SERVICES = [
-  {icon:'fa-crosshairs',title:'Penetration Testing',desc:'Comprehensive black/white/grey-box pen tests on web apps, APIs, mobile, and networks.',tags:['OWASP','PTES','NIST']},
-  {icon:'fa-user-ninja',title:'Red Team Operations',desc:'Simulated adversary attacks replicating real-world APT tactics to stress-test defenses.',tags:['APT Simulation','Social Eng.']},
-  {icon:'fa-magnifying-glass',name:'Vulnerability Assessment',desc:'Systematic identification and risk-ranked reporting of security weaknesses.',tags:['CVSS','CVE','Remediation']},
-  {icon:'fa-siren-on',title:'Incident Response',desc:'Rapid containment, forensic investigation, and recovery planning post-breach.',tags:['DFIR','Memory Forensics']},
-  {icon:'fa-cloud-check',title:'Cloud Security Audit',desc:'Deep-dive audit of cloud configurations, IAM policies, and compliance posture.',tags:['CIS Benchmark','SOC2']},
-  {icon:'fa-graduation-cap',title:'Security Training',desc:'Hands-on workshops for dev teams on secure coding, threat modeling, and awareness.',tags:['OWASP Top10','DevSecOps']},
-];
+    <!-- ============================================
+    REVIEW MODAL
+    ============================================ -->
+    <div id="reviewModalOverlay" class="fixed inset-0 z-[85] bg-brand-900/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 pointer-events-none" onclick="window.closeReviewModal()"></div>
+    <div id="reviewModal" class="fixed top-1/2 left-1/2 z-[90] w-[92%] max-w-lg bg-white dark:bg-[#0a0f1a] rounded-3xl shadow-2xl p-6 transform -translate-x-1/2 -translate-y-1/2 scale-95 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none">
+        <button onclick="window.closeReviewModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="text-xl font-extrabold text-brand-900 dark:text-white mb-4 flex items-center gap-2"><i class="fa-regular fa-star text-amber-400"></i> Tulis Ulasan</h3>
+        <form id="reviewForm" onsubmit="event.preventDefault(); window.submitReview()">
+            <div class="space-y-4">
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Nama</label>
+                    <input id="reviewName" type="text" placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Toko / Usaha</label>
+                    <input id="reviewStore" type="text" placeholder="Nama toko" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all" required />
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Rating</label>
+                    <div id="starRatingSelector" class="star-rating-input">
+                        <i data-rating="5" class="fa-regular fa-star" onclick="window.setRating(5)"></i>
+                        <i data-rating="4" class="fa-regular fa-star" onclick="window.setRating(4)"></i>
+                        <i data-rating="3" class="fa-regular fa-star" onclick="window.setRating(3)"></i>
+                        <i data-rating="2" class="fa-regular fa-star" onclick="window.setRating(2)"></i>
+                        <i data-rating="1" class="fa-regular fa-star" onclick="window.setRating(1)"></i>
+                        <input id="reviewRating" type="hidden" value="5" />
+                    </div>
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mb-1">Ulasan</label>
+                    <textarea id="reviewText" rows="3" placeholder="Bagaimana pengalaman Anda berbelanja di R2 Nusantara?" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0d1522] text-sm text-brand-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 transition-all resize-none" required></textarea>
+                </div>
+                <button id="submitReviewBtn" type="submit" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-paper-plane"></i> Kirim Ulasan
+                </button>
+            </div>
+        </form>
+    </div>
 
-const EXPERIENCE = [
-  {date:'2022 – Present',title:'Lead Penetration Tester',co:'CyberShield Bangladesh',desc:'Leading a team of 6 security analysts. Conducted 40+ pen tests annually across banking, telecom, and e-government sectors. Discovered 15 critical CVEs.'},
-  {date:'2020 – 2022',title:'Senior Security Analyst',co:'SecureTech Solutions',desc:'Spearheaded red team engagements for Fortune 500 clients. Developed internal tooling for automated recon and exploit chaining pipelines.'},
-  {date:'2018 – 2020',title:'Security Researcher',co:'Bug Bounty Independent',desc:'Earned $85,000+ across HackerOne & Bugcrowd. Top-ranked researcher in Bangladesh. Disclosed vulns to Google, Microsoft, and Facebook.'},
-  {date:'2016 – 2018',title:'Junior SOC Analyst',co:'TechGuard Corp',desc:'Monitored SIEM alerts, triaged incidents, and built detection rules. Reduced mean time to detect (MTTD) by 40% through ML-based alerting.'},
-];
+    <!-- SCRIPTS -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
 
-const CERTS = [
-  {icon:'fa-certificate',name:'OSCP',issuer:'Offensive Security',yr:'2021'},
-  {icon:'fa-shield',name:'CEH Master',issuer:'EC-Council',yr:'2020'},
-  {icon:'fa-lock',name:'CISSP',issuer:'(ISC)²',yr:'2022'},
-  {icon:'fa-cloud',name:'AWS Security',issuer:'Amazon Web Services',yr:'2023'},
-  {icon:'fa-code',name:'GWAPT',issuer:'GIAC',yr:'2021'},
-  {icon:'fa-terminal',name:'eCPPT',issuer:'eLearnSecurity',yr:'2019'},
-  {icon:'fa-network-wired',name:'CompTIA PenTest+',issuer:'CompTIA',yr:'2020'},
-  {icon:'fa-microscope',name:'GCFA',issuer:'GIAC Forensics',yr:'2022'},
-];
-
-const PROJECTS = [
-  {img:'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',badge:'OPEN SOURCE',title:'AutoRecon Pro',desc:'Advanced automated reconnaissance framework integrating 30+ OSINT tools with AI-driven vulnerability correlation and reporting.',tech:['Python','Docker','Redis','FastAPI'],links:[{icon:'fa-github',lbl:'GitHub',url:'#'},{icon:'fa-external-link',lbl:'Demo',url:'#'}]},
-  {img:'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',badge:'ENTERPRISE',title:'ThreatMatrix Dashboard',desc:'Real-time threat intelligence aggregation platform ingesting 50+ feeds, correlating IOCs with MITRE ATT&CK techniques.',tech:['React','Node.js','Elasticsearch','STIX2'],links:[{icon:'fa-github',lbl:'GitHub',url:'#'},{icon:'fa-external-link',lbl:'Demo',url:'#'}]},
-  {img:'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',badge:'RESEARCH',title:'CryptoVault Fuzzer',desc:'Blazing-fast cryptographic implementation fuzzer that discovered 3 zero-days in popular SSL/TLS libraries used by millions.',tech:['Rust','AFL++','libFuzzer','GDB'],links:[{icon:'fa-github',lbl:'GitHub',url:'#'},{icon:'fa-file-pdf',lbl:'Paper',url:'#'}]},
-  {img:'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=80',badge:'TOOL',title:'PhishGuard ML',desc:'Machine-learning model achieving 98.7% phishing URL detection accuracy, deployed as a browser extension and API service.',tech:['Python','TensorFlow','Chrome API','Flask'],links:[{icon:'fa-github',lbl:'GitHub',url:'#'},{icon:'fa-external-link',lbl:'Install',url:'#'}]},
-  {img:'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',badge:'PLATFORM',title:'RedOps C2 Framework',desc:'Custom Command & Control framework with encrypted comms, modular agents, and evasion techniques for authorized red team use.',tech:['Go','gRPC','AES-256','WebSockets'],links:[{icon:'fa-github',lbl:'Private',url:'#'},{icon:'fa-file',lbl:'Whitepaper',url:'#'}]},
-  {img:'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80',badge:'API',title:'VulnScan REST API',desc:'Scalable vulnerability scanning API with integration hooks for CI/CD pipelines, supporting SAST, DAST and SCA.',tech:['Node.js','Docker','PostgreSQL','OWASP ZAP'],links:[{icon:'fa-github',lbl:'GitHub',url:'#'},{icon:'fa-book',lbl:'Docs',url:'#'}]},
-];
-
-const TESTIMONIALS = [
-  {stars:5,quote:'Rizu is the most meticulous security professional I have ever worked with. His pentest report was so detailed it changed how our entire engineering org thinks about security.',author:'Tanvir Hasan',role:'CTO, FinTech BD'},
-  {stars:5,quote:"After Rizu's red team engagement, we completely overhauled our incident response playbook. He found 3 critical issues our previous vendor missed for two years.",author:'Sarah Malik',role:'CISO, MediSecure Corp'},
-  {stars:5,quote:"Absolutely world-class. Rizu discovered a critical SQL injection flaw in our payment gateway that could have exposed 2 million customer records. Priceless work.",author:'Ahmad Reza',role:'VP Engineering, PayZone'},
-];
-
-/* ══════════════════════════════════════════
-   PRELOADER
-══════════════════════════════════════════ */
-let pct=0;
-const pctEl=document.getElementById('plPct');
-const plIntvl=setInterval(()=>{
-  pct+=Math.random()*18;
-  if(pct>=100){pct=100;clearInterval(plIntvl);setTimeout(()=>{document.getElementById('preloader').classList.add('gone');initAll()},400)}
-  pctEl.textContent=Math.floor(pct)+'%';
-},120);
-
-/* ══════════════════════════════════════════
-   CURSOR
-══════════════════════════════════════════ */
-const cur=document.getElementById('cursor');
-const trail=document.getElementById('cursorTrail');
-let mx=0,my=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function animTrail(){tx+=(mx-tx)*.14;ty+=(my-ty)*.14;trail.style.left=tx+'px';trail.style.top=ty+'px';requestAnimationFrame(animTrail)})();
-
-/* ══════════════════════════════════════════
-   CANVAS PARTICLES
-══════════════════════════════════════════ */
-function initCanvas(){
-  const c=document.getElementById('bgCanvas');
-  const ctx=c.getContext('2d');
-  let W,H,pts=[];
-  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;pts=[];for(let i=0;i<80;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5})}
-  window.addEventListener('resize',resize);resize();
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    pts.forEach(p=>{
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>W)p.vx*=-1;
-      if(p.y<0||p.y>H)p.vy*=-1;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(0,255,204,0.4)';ctx.fill();
-    });
-    pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{
-      const d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
-      ctx.strokeStyle=`rgba(0,255,204,${.12*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke()}
-    }));
-    requestAnimationFrame(draw);
-  }
-  draw();
-}
-
-/* ══════════════════════════════════════════
-   TYPED TEXT
-══════════════════════════════════════════ */
-function initTyped(){
-  const roles=['Penetration Tester','Red Team Operator','Security Researcher','Ethical Hacker','Bug Bounty Hunter','DFIR Specialist'];
-  let ri=0,ci=0,del=false;
-  const el=document.getElementById('typedText');
-  function tick(){
-    const word=roles[ri];
-    if(!del){el.textContent=word.slice(0,++ci);if(ci===word.length){del=true;setTimeout(tick,1800);return}}
-    else{el.textContent=word.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length}}
-    setTimeout(tick,del?60:90);
-  }
-  tick();
-}
-
-/* ══════════════════════════════════════════
-   COUNTER ANIMATION
-══════════════════════════════════════════ */
-function countUp(id,end,sfx=''){
-  const el=document.getElementById(id);let cur=0;
-  const step=Math.ceil(end/60);
-  const t=setInterval(()=>{cur=Math.min(cur+step,end);el.textContent=cur+sfx;if(cur>=end)clearInterval(t)},30);
-}
-
-/* ══════════════════════════════════════════
-   BUILD SECTIONS
-══════════════════════════════════════════ */
-function buildSkills(){
-  const g=document.getElementById('skillsGrid');
-  SKILLS.forEach(s=>{
-    g.innerHTML+=`<div class="skill-card">
-      <div class="sk-head">
-        <div class="sk-icon"><i class="fas ${s.icon}"></i></div>
-        <div><div class="sk-name">${s.name}</div><div class="sk-sub">${s.sub}</div></div>
-      </div>
-      <div class="sk-pct-wrap"><span class="sk-pct-lbl">PROFICIENCY</span><span class="sk-pct-val">${s.pct}%</span></div>
-      <div class="sk-bar"><div class="sk-fill" data-pct="${s.pct}"></div></div>
-      <div class="sk-tags">${s.tags.map(t=>`<span class="sk-tag">${t}</span>`).join('')}</div>
-    </div>`;
-  });
-}
-
-function buildServices(){
-  const g=document.getElementById('svcGrid');
-  SERVICES.forEach((s,i)=>{
-    g.innerHTML+=`<div class="svc-card">
-      <div class="svc-num">${String(i+1).padStart(2,'0')}</div>
-      <div class="svc-ico"><i class="fas ${s.icon}"></i></div>
-      <div class="svc-title">${s.title||s.name}</div>
-      <div class="svc-desc">${s.desc}</div>
-      <div class="svc-tags">${s.tags.map(t=>`<span class="svc-tag">${t}</span>`).join('')}</div>
-    </div>`;
-  });
-}
-
-function buildTimeline(){
-  const g=document.getElementById('timeline');
-  EXPERIENCE.forEach(e=>{
-    g.innerHTML+=`<div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-box">
-        <div class="tl-date">${e.date}</div>
-        <div class="tl-title">${e.title}</div>
-        <div class="tl-co">${e.co}</div>
-        <div class="tl-desc">${e.desc}</div>
-      </div>
-    </div>`;
-  });
-}
-
-function buildCerts(){
-  const g=document.getElementById('certGrid');
-  CERTS.forEach(c=>{
-    g.innerHTML+=`<div class="cert-card">
-      <div class="cert-ico"><i class="fas ${c.icon}"></i></div>
-      <div class="cert-name">${c.name}</div>
-      <div class="cert-issuer">${c.issuer}</div>
-      <div class="cert-yr">${c.yr}</div>
-    </div>`;
-  });
-}
-
-function buildProjects(){
-  const g=document.getElementById('projGrid');
-  PROJECTS.forEach(p=>{
-    g.innerHTML+=`<div class="proj-card">
-      <div class="proj-img">
-        <img src="${p.img}" alt="${p.title}" loading="lazy">
-        <div class="proj-img-over"></div>
-        <span class="proj-badge">${p.badge}</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-title">${p.title}</div>
-        <div class="proj-desc">${p.desc}</div>
-        <div class="proj-tech">${p.tech.map(t=>`<span>${t}</span>`).join('')}</div>
-        <div class="proj-links">${p.links.map(l=>`<a href="${l.url}"><i class="fas ${l.icon}"></i>${l.lbl}</a>`).join('')}</div>
-      </div>
-    </div>`;
-  });
-}
-
-/* ══════════════════════════════════════════
-   TESTIMONIALS SLIDER
-══════════════════════════════════════════ */
-let tIdx=0;
-function buildTestimonials(){
-  const c=document.getElementById('testiCards');
-  const d=document.getElementById('testiDots');
-  TESTIMONIALS.forEach((t,i)=>{
-    c.innerHTML+=`<div class="testi-card${i===0?' on':''}" data-ti="${i}">
-      <div class="testi-stars">${'★'.repeat(t.stars)}</div>
-      <div class="testi-quote">${t.quote}</div>
-      <div class="testi-author">${t.author}</div>
-      <div class="testi-role">${t.role}</div>
-    </div>`;
-    d.innerHTML+=`<button class="tdot${i===0?' on':''}" onclick="goTesti(${i})"></button>`;
-  });
-  document.getElementById('tPrev').onclick=()=>goTesti((tIdx-1+TESTIMONIALS.length)%TESTIMONIALS.length);
-  document.getElementById('tNext').onclick=()=>goTesti((tIdx+1)%TESTIMONIALS.length);
-  setInterval(()=>goTesti((tIdx+1)%TESTIMONIALS.length),5000);
-}
-function goTesti(n){
-  document.querySelectorAll('.testi-card').forEach(c=>c.classList.remove('on'));
-  document.querySelectorAll('.tdot').forEach((d,i)=>d.classList.toggle('on',i===n));
-  document.querySelector(`.testi-card[data-ti="${n}"]`).classList.add('on');
-  tIdx=n;
-}
-
-/* ══════════════════════════════════════════
-   SCROLL REVEAL + NAV + SKILL BARS
-══════════════════════════════════════════ */
-function initScroll(){
-  const nav=document.getElementById('nav');
-  const btt=document.getElementById('btt');
-  const reveals=document.querySelectorAll('.reveal');
-  const navLinks=document.querySelectorAll('.navlink');
-  const sections=document.querySelectorAll('section[id]');
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('in');
-        // Animate skill bars
-        e.target.querySelectorAll('.sk-fill').forEach(f=>{f.style.width=f.dataset.pct+'%'});
-      }
-    });
-  },{threshold:.15});
-  reveals.forEach(r=>io.observe(r));
-
-  // Hero stats counter trigger
-  const heroIO=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){countUp('sn1',8,'+');countUp('sn2',150,'+');countUp('sn3',120,'+');countUp('sn4',8);}
-  },{threshold:.5});
-  heroIO.observe(document.querySelector('.hero-stats'));
-
-  window.addEventListener('scroll',()=>{
-    const sy=scrollY;
-    nav.classList.toggle('solid',sy>60);
-    btt.classList.toggle('show',sy>400);
-    // Active nav
-    sections.forEach(s=>{
-      const top=s.offsetTop-120,bot=top+s.offsetHeight;
-      const link=document.querySelector(`.navlink[href="#${s.id}"]`);
-      if(link)link.classList.toggle('on',sy>=top&&sy<bot);
-    });
-  });
-}
-
-/* ══════════════════════════════════════════
-   MOBILE NAV
-══════════════════════════════════════════ */
-function initMobileNav(){
-  const hb=document.getElementById('hamburger');
-  const mn=document.getElementById('mobileNav');
-  hb.onclick=()=>{hb.classList.toggle('open');mn.classList.toggle('open')};
-  document.querySelectorAll('.mnl').forEach(a=>a.onclick=()=>{mn.classList.remove('open');hb.classList.remove('open')});
-}
-
-/* ══════════════════════════════════════════
-   FORM
-══════════════════════════════════════════ */
-function sendMsg(){
-  const n=document.getElementById('fName').value.trim();
-  const e=document.getElementById('fEmail').value.trim();
-  const s=document.getElementById('fSubject').value.trim();
-  const m=document.getElementById('fMsg').value.trim();
-  const st=document.getElementById('fStatus');
-  if(!n||!e||!s||!m){st.style.color='#ff3e8a';st.textContent='// ERROR: All fields required.';return}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){st.style.color='#ff3e8a';st.textContent='// ERROR: Invalid email address.';return}
-  st.style.color='var(--c0)';st.textContent='// Transmitting...';
-  setTimeout(()=>{st.textContent='// SUCCESS: Message sent. I\'ll respond within 24h.';
-  document.getElementById('fName').value='';document.getElementById('fEmail').value='';
-  document.getElementById('fSubject').value='';document.getElementById('fMsg').value='';},1500);
-}
-
-/* ══════════════════════════════════════════
-   INIT ALL
-══════════════════════════════════════════ */
-function initAll(){
-  initCanvas();
-  initTyped();
-  buildSkills();
-  buildServices();
-  buildTimeline();
-  buildCerts();
-  buildProjects();
-  buildTestimonials();
-  initScroll();
-  initMobileNav();
-}
-</script>
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) { console.log('SW registered:', reg.scope); })
+                    .catch(function(err) { console.log('SW registration failed:', err); });
+            });
+        }
+    </script>
 </body>
 </html>
