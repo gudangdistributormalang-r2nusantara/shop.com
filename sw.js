@@ -1,46 +1,29 @@
-/* ============================================
-   SERVICE WORKER — R2 Nusantara PWA
-   ============================================ */
-var CACHE_NAME = 'r2-nusantara-v1';
-var urlsToCache = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/data.js',
-    '/app.js',
-    '/manifest.json'
+const CACHE_NAME = 'r2-nusantara-v3';
+const urlsToCache = [
+  '/R2-Nusantara/',
+  '/R2-Nusantara/index.html',
+  '/R2-Nusantara/style.css',
+  '/R2-Nusantara/app.js',
+  '/R2-Nusantara/data.js',
+  '/R2-Nusantara/manifest.json'
 ];
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-        .then(function(cache) {
-            return cache.addAll(urlsToCache);
-        })
-    );
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)).catch(function(){})
+  );
 });
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-        .then(function(response) {
-            if (response) return response;
-            return fetch(event.request);
-        })
-    );
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+    ))
+  );
 });
 
-self.addEventListener('activate', function(event) {
-    var cacheWhitelist = [CACHE_NAME];
-    event.waitUntil(
-        caches.keys().then(function(cacheNames) {
-            return Promise.all(
-                cacheNames.map(function(cacheName) {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
-    );
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => response || fetch(event.request))
+  );
 });
