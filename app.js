@@ -1,7 +1,7 @@
 /* ============================================
-   app.js — R2 NUSANTARA MAIN APPLICATION
-   (UPGRADE: sinkronisasi assets lokal + semua fitur dipertahankan)
-============================================ */
+   app.js — R2 NUSANTARA (UI revamp "Manifest & Resi")
+   Semua fitur dipertahankan 100%.
+   ============================================ */
 (function () {
 'use strict';
 
@@ -11,7 +11,7 @@ window.toggleDarkMode = function () {
   var isDark = document.documentElement.classList.contains('dark');
   try { localStorage.setItem('r2_dark_mode', isDark); } catch (e) {}
   var icon = document.getElementById('darkModeIcon');
-  if (icon) icon.className = isDark ? 'fa-solid fa-sun text-[13px] sm:text-sm' : 'fa-solid fa-moon text-[13px] sm:text-sm';
+  if (icon) icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
 };
 
 /* ============ 2. SMART CONTEXT + CHATBOT ============ */
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
   }, 3000);
 });
 
-/* ============ 3. STATE GLOBAL ============ */
+/* ============ 3. STATE ============ */
 var cart = [], wishlist = [];
 try { cart = JSON.parse(localStorage.getItem('r2_cart')) || []; } catch (e) { cart = []; }
 try { wishlist = JSON.parse(localStorage.getItem('r2_wishlist')) || []; } catch (e) { wishlist = []; }
@@ -58,16 +58,16 @@ function showToast(m, type) {
   type = type || 'success';
   var c = document.getElementById('toast-container'); if (!c) return;
   var to = document.createElement('div');
-  var ic = type === 'success' ? 'fa-check-circle text-gold' : type === 'error' ? 'fa-circle-exclamation text-red-400' : 'fa-circle-info text-brand-400';
-  to.className = 'bg-deep text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 translate-x-full transition-transform duration-300 border border-white/10';
-  to.innerHTML = '<i class="fa-solid ' + ic + '"></i><span class="font-bold text-xs">' + m + '</span>';
+  var ic = type === 'success' ? 'fa-check-circle text-gold' : type === 'error' ? 'fa-circle-exclamation text-red-400' : 'fa-circle-info text-gold';
+  to.className = 'toast';
+  to.innerHTML = '<i class="fa-solid ' + ic + '"></i><span>' + m + '</span>';
   c.appendChild(to);
-  setTimeout(function () { to.classList.remove('translate-x-full'); }, 10);
-  setTimeout(function () { to.classList.add('translate-x-full'); setTimeout(function () { to.remove(); }, 300); }, 2500);
+  setTimeout(function () { to.classList.add('show'); }, 10);
+  setTimeout(function () { to.classList.remove('show'); setTimeout(function () { to.remove(); }, 350); }, 2500);
 }
 
 /* ============ 5. ANIMASI TEKS ============ */
-var SCRAMBLE_CHARS = '█▓▒░<>/#01RXZK*+';
+var SCRAMBLE_CHARS = '█▓▒░<>#/01RXZK+';
 function scrambleIn(el) {
   var original = el.getAttribute('data-scramble-text') || el.textContent;
   var iterations = 0, frame = 0;
@@ -133,12 +133,12 @@ window.toggleMobileMenu = function () {
   var m = document.getElementById('mobileMenu'), ic = document.getElementById('mobileMenuIcon');
   if (!m) return;
   m.classList.toggle('hidden');
-  if (ic) ic.className = m.classList.contains('hidden') ? 'fa-solid fa-bars text-sm' : 'fa-solid fa-xmark text-sm';
+  if (ic) ic.className = m.classList.contains('hidden') ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
 };
 function closeMobileMenu() {
   var m = document.getElementById('mobileMenu'), ic = document.getElementById('mobileMenuIcon');
   if (m) m.classList.add('hidden');
-  if (ic) ic.className = 'fa-solid fa-bars text-sm';
+  if (ic) ic.className = 'fa-solid fa-bars';
 }
 
 /* ============ 7. KATALOG ============ */
@@ -159,16 +159,20 @@ function renderStars(rating) {
 }
 function isNewProduct(id) { var n = parseInt(id.replace(/\D/g, ''), 10); return n % 11 === 0; }
 function getRibbonBadge(p) {
-  if (isNewProduct(p.id)) return { cls: 'new', label: '✨ BARU' };
+  if (isNewProduct(p.id)) return { cls: 'new', label: '✦ BARU' };
   if (p.category === 'resmi') {
-    if (p.segment === 'A' || p.segment === 'D') return { cls: 'vip', label: '👑 VIP' };
-    if (p.segment === 'B') return { cls: 'hit', label: '🔥 TERLARIS' };
+    if (p.segment === 'A' || p.segment === 'D') return { cls: 'vip', label: '★ VIP' };
+    if (p.segment === 'B') return { cls: 'hit', label: '▲ TERLARIS' };
     return null;
   }
   var tier = getR2Tier(p.price);
-  if (tier === 'premium') return { cls: 'vip', label: '👑 VIP' };
-  if (tier === 'populer') return { cls: 'hit', label: '🔥 TERLARIS' };
+  if (tier === 'premium') return { cls: 'vip', label: '★ VIP' };
+  if (tier === 'populer') return { cls: 'hit', label: '▲ TERLARIS' };
   return null;
+}
+function initialsOf(name) {
+  var w = name.trim().split(/\s+/);
+  return ((w[0] ? w[0][0] : '') + (w[1] ? w[1][0] : '')).toUpperCase();
 }
 window.switchCatalog = function (cat) {
   if (cat !== 'r2' && cat !== 'resmi') return;
@@ -186,34 +190,32 @@ function updateCatalogInfoBanner() {
   if (!b) return;
   if (activeCatalog === 'r2') {
     b.classList.remove('resmi');
-    if (i) i.className = 'fa-solid fa-fire-flame-curved text-lg';
+    if (i) i.className = 'fa-solid fa-fire-flame-curved';
     if (t) t.textContent = 'Katalog R2 Nusantara';
     if (d) d.textContent = '167 merek lokal pilihan dengan harga kompetitif untuk margin maksimal.';
   } else {
     b.classList.add('resmi');
-    if (i) i.className = 'fa-solid fa-certificate text-lg';
+    if (i) i.className = 'fa-solid fa-certificate';
     if (t) t.textContent = 'Katalog Resmi — Brand Nasional & Internasional';
     if (d) d.textContent = '66 merek resmi terbagi dalam 5 segmen. Harga grosir per slop.';
   }
 }
 function buildFilterChips() {
   var c = document.getElementById('filterChipsContainer'); if (!c) return;
-  var base = 'filter-chip px-5 py-2.5 rounded-xl text-xs font-bold transition-all';
-  var on = 'bg-deep text-white shadow-md', off = 'bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-gold hover:text-gold';
   if (activeCatalog === 'r2') {
     c.innerHTML =
-      '<button onclick="applyFilter(\'all\')" id="chip-all" class="' + base + ' ' + on + '">Semua</button>' +
-      '<button onclick="applyFilter(\'hemat\')" id="chip-hemat" class="' + base + ' ' + off + '"><i class="fa-solid fa-piggy-bank text-[10px]"></i> Hemat</button>' +
-      '<button onclick="applyFilter(\'populer\')" id="chip-populer" class="' + base + ' ' + off + '"><i class="fa-solid fa-fire text-[10px]"></i> Populer</button>' +
-      '<button onclick="applyFilter(\'premium\')" id="chip-premium" class="' + base + ' ' + off + '"><i class="fa-solid fa-crown text-[10px]"></i> Premium</button>';
+      '<button onclick="applyFilter(\'all\')" id="chip-all" class="chip on">Semua</button>' +
+      '<button onclick="applyFilter(\'hemat\')" id="chip-hemat" class="chip"><i class="fa-solid fa-piggy-bank"></i> Hemat</button>' +
+      '<button onclick="applyFilter(\'populer\')" id="chip-populer" class="chip"><i class="fa-solid fa-fire"></i> Populer</button>' +
+      '<button onclick="applyFilter(\'premium\')" id="chip-premium" class="chip"><i class="fa-solid fa-crown"></i> Premium</button>';
   } else {
     c.innerHTML =
-      '<button onclick="applyFilter(\'all\')" id="chip-all" class="' + base + ' ' + on + '">Semua</button>' +
-      '<button onclick="applyFilter(\'segA\')" id="chip-segA" class="filter-chip-resmi ' + base + ' ' + off + '"><i class="fa-solid fa-gem text-[10px]"></i> Segmen A</button>' +
-      '<button onclick="applyFilter(\'segB\')" id="chip-segB" class="filter-chip-resmi ' + base + ' ' + off + '"><i class="fa-solid fa-star text-[10px]"></i> Segmen B</button>' +
-      '<button onclick="applyFilter(\'segC\')" id="chip-segC" class="filter-chip-resmi ' + base + ' ' + off + '"><i class="fa-solid fa-leaf text-[10px]"></i> Segmen C</button>' +
-      '<button onclick="applyFilter(\'segD\')" id="chip-segD" class="filter-chip-resmi ' + base + ' ' + off + '"><i class="fa-solid fa-globe text-[10px]"></i> Segmen D</button>' +
-      '<button onclick="applyFilter(\'segE\')" id="chip-segE" class="filter-chip-resmi ' + base + ' ' + off + '"><i class="fa-solid fa-hand-holding-heart text-[10px]"></i> Segmen E</button>';
+      '<button onclick="applyFilter(\'all\')" id="chip-all" class="chip on">Semua</button>' +
+      '<button onclick="applyFilter(\'segA\')" id="chip-segA" class="chip filter-chip-resmi"><i class="fa-solid fa-gem"></i> Segmen A</button>' +
+      '<button onclick="applyFilter(\'segB\')" id="chip-segB" class="chip filter-chip-resmi"><i class="fa-solid fa-star"></i> Segmen B</button>' +
+      '<button onclick="applyFilter(\'segC\')" id="chip-segC" class="chip filter-chip-resmi"><i class="fa-solid fa-leaf"></i> Segmen C</button>' +
+      '<button onclick="applyFilter(\'segD\')" id="chip-segD" class="chip filter-chip-resmi"><i class="fa-solid fa-globe"></i> Segmen D</button>' +
+      '<button onclick="applyFilter(\'segE\')" id="chip-segE" class="chip filter-chip-resmi"><i class="fa-solid fa-hand-holding-heart"></i> Segmen E</button>';
   }
 }
 function getProcessedProducts() {
@@ -229,77 +231,62 @@ function getProcessedProducts() {
   });
   return r;
 }
-function generateProductPlaceholder(name, size, uid) {
-  var w = size === 'small' ? 40 : 240, h = size === 'small' ? 40 : 160, fs = size === 'small' ? 9 : 15;
-  var gid = 'grad' + uid + size;
-  var safe = escapeHtml(name.length > (size === 'small' ? 6 : 18) ? name.slice(0, size === 'small' ? 6 : 18) + '…' : name);
-  var wm = size === 'medium'
-    ? '<image href="assets/logo/watermark.png" x="' + (w - 86) + '" y="' + (h - 62) + '" width="74" height="52" opacity="0.09" preserveAspectRatio="xMidYMid meet"></image>'
-    : '';
-  return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">' +
-    '<defs><linearGradient id="' + gid + '" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#eff6ff"/><stop offset="100%" stop-color="#bfdbfe"/></linearGradient></defs>' +
-    '<rect width="' + w + '" height="' + h + '" fill="url(#' + gid + ')" rx="8"/>' +
-    '<circle cx="' + (w * 0.85) + '" cy="' + (h * 0.2) + '" r="' + (h * 0.35) + '" fill="#c8962e" opacity="0.15"/>' + wm +
-    '<text x="' + (w / 2) + '" y="' + (h / 2) + '" font-family="Inter, sans-serif" font-size="' + fs + '" font-weight="700" fill="#1e3a5f" text-anchor="middle" dominant-baseline="middle">' + safe + '</text></svg>';
-}
 function buildCardActions(p) {
   var q = getCartQty(p.id);
   var main = q > 0
-    ? '<div class="mp-stepper stepper-enter"><button onclick="window.__updateQty(\'' + p.id + '\',-1)" class="mp-step-btn">-</button><span class="mp-step-val">' + q + '</span><button onclick="window.__updateQty(\'' + p.id + '\',1)" class="mp-step-btn mp-step-btn-gold">+</button></div>'
-    : '<button onclick="window.__addCart(\'' + p.id + '\')" class="mp-add-btn"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>';
-  return '<div class="mp-actions">' + main + '<button onclick="openQuickView(\'' + p.id + '\')" class="mp-quick-btn" aria-label="Lihat Cepat"><i class="fa-solid fa-eye"></i></button></div>';
+    ? '<div class="p-stepper"><button class="p-step" onclick="window.__updateQty(\'' + p.id + '\',-1)">−</button><span class="p-qty">' + q + '</span><button class="p-step gold" onclick="window.__updateQty(\'' + p.id + '\',1)">+</button></div>'
+    : '<button onclick="window.__addCart(\'' + p.id + '\')" class="p-add"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>';
+  return '<div class="p-actions">' + main + '<button onclick="openQuickView(\'' + p.id + '\')" class="p-eye" aria-label="Lihat Cepat"><i class="fa-solid fa-eye"></i></button></div>';
 }
 function buildRowActions(p) {
   var q = getCartQty(p.id);
   var main = q > 0
-    ? '<div class="mp-stepper sm stepper-enter"><button onclick="window.__updateQty(\'' + p.id + '\',-1)" class="mp-step-btn">-</button><span class="mp-step-val">' + q + '</span><button onclick="window.__updateQty(\'' + p.id + '\',1)" class="mp-step-btn mp-step-btn-gold">+</button></div>'
-    : '<button onclick="window.__addCart(\'' + p.id + '\')" class="mp-add-btn sm" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-plus"></i></button>';
-  return main + '<button onclick="openQuickView(\'' + p.id + '\')" class="mp-quick-btn sm" aria-label="Lihat Cepat"><i class="fa-solid fa-eye"></i></button>';
+    ? '<div class="t-stepper"><button class="p-step" onclick="window.__updateQty(\'' + p.id + '\',-1)">−</button><span class="p-qty">' + q + '</span><button class="p-step gold" onclick="window.__updateQty(\'' + p.id + '\',1)">+</button></div>'
+    : '<button onclick="window.__addCart(\'' + p.id + '\')" class="t-add" aria-label="Tambah"><i class="fa-solid fa-cart-plus"></i></button>';
+  return main + '<button onclick="openQuickView(\'' + p.id + '\')" class="t-add" style="background:transparent;border:1.5px solid var(--line);color:var(--ink-3)" aria-label="Lihat Cepat"><i class="fa-solid fa-eye"></i></button>';
 }
 function buildProductCardHTML(p, idx) {
   var isResmi = p.category === 'resmi';
   var tag = isResmi
-    ? '<span class="mp-tag mp-tag-resmi"><i class="fa-solid fa-certificate"></i> RESMI</span>'
-    : '<span class="mp-tag mp-tag-r2"><i class="fa-solid fa-fire-flame-curved"></i> R2</span>';
-  var catLabel = isResmi ? (p.segmentName || 'Katalog Resmi') : 'Katalog R2 Nusantara';
+    ? '<span class="p-tag tag-resmi"><i class="fa-solid fa-certificate"></i> RESMI</span>'
+    : '<span class="p-tag tag-r2"><i class="fa-solid fa-fire-flame-curved"></i> R2</span>';
+  var catLabel = isResmi ? (p.segmentName || 'Katalog Resmi') : 'Katalog R2';
   var rating = pseudoRating(p.id);
   var ribbon = getRibbonBadge(p);
-  var ribbonHTML = ribbon ? '<div class="mp-ribbon mp-ribbon-' + ribbon.cls + '">' + ribbon.label + '</div>' : '';
+  var ribbonHTML = ribbon ? '<div class="p-ribbon rb-' + ribbon.cls + '">' + ribbon.label + '</div>' : '';
   var wl = isWishlisted(p.id);
-  var wishBtn = '<button onclick="toggleWishlistItem(\'' + p.id + '\', event)" data-wish-heart="' + p.id + '" class="mp-wish-btn' + (wl ? ' is-active' : '') + '" aria-label="Wishlist"><i class="fa-' + (wl ? 'solid' : 'regular') + ' fa-heart"></i></button>';
+  var wishBtn = '<button onclick="toggleWishlistItem(\'' + p.id + '\', event)" data-wish-heart="' + p.id + '" class="p-wish' + (wl ? ' is-active' : '') + '" aria-label="Wishlist"><i class="fa-' + (wl ? 'solid' : 'regular') + ' fa-heart"></i></button>';
   var retail = retailPrice(p.price);
   var savingsPct = Math.max(1, Math.round((1 - p.price / retail) * 100));
-  var ph = generateProductPlaceholder(p.name, 'medium', p.id);
-  return '<div class="mp-card card-glow card-enter' + (isResmi ? ' mp-card-resmi' : '') + '" style="animation-delay:' + (idx * 40) + 'ms" data-pid="' + p.id + '">' +
-    '<div class="mp-card-media">' + ribbonHTML + wishBtn + '<div class="mp-card-img">' + ph + '</div></div>' +
-    '<div class="mp-card-body">' +
-    '<div class="mp-card-toprow">' + tag + '<span class="mp-id">' + p.id.toUpperCase() + '</span></div>' +
-    '<p class="mp-cat">' + escapeHtml(catLabel) + '</p>' +
-    '<h3 class="mp-name">' + escapeHtml(p.name) + '</h3>' +
-    '<div class="mp-rating"><span class="mp-stars">' + renderStars(rating) + '</span><span class="mp-rating-num">' + rating.toFixed(1) + '</span></div>' +
-    '<div class="mp-price-row"><span class="mp-price-old">' + formatRupiah(retail) + '</span><span class="mp-save-badge">Hemat ' + savingsPct + '%</span></div>' +
-    '<div class="mp-price-now">' + formatRupiah(p.price) + '<span class="mp-price-unit">/slop grosir</span></div>' +
-    buildCardActions(p) +
+  return '<div class="p-card card-enter' + (isResmi ? ' resmi' : '') + '" style="animation-delay:' + (idx * 35) + 'ms" data-pid="' + p.id + '">' +
+    '<div class="p-media">' + ribbonHTML + wishBtn + '<span class="p-initial">' + initialsOf(p.name) + '</span><span class="p-barcode"></span></div>' +
+    '<div class="p-body">' +
+      '<div class="p-toprow">' + tag + '<span class="p-id">' + p.id.toUpperCase() + '</span></div>' +
+      '<p class="p-cat">' + escapeHtml(catLabel) + '</p>' +
+      '<h3 class="p-name">' + escapeHtml(p.name) + '</h3>' +
+      '<div class="p-rating"><span class="p-stars">' + renderStars(rating) + '</span><span class="p-rnum">' + rating.toFixed(1) + '</span></div>' +
+      '<div class="p-price-row"><span class="p-old">' + formatRupiah(retail) + '</span><span class="p-save">−' + savingsPct + '%</span></div>' +
+      '<div class="p-price">' + formatRupiah(p.price) + ' <small>/slop</small></div>' +
+      buildCardActions(p) +
     '</div></div>';
 }
 function buildProductRowHTML(p, idx) {
   var isResmi = p.category === 'resmi', wl = isWishlisted(p.id);
   var rating = pseudoRating(p.id), ribbon = getRibbonBadge(p), retail = retailPrice(p.price);
   var catBadge = isResmi
-    ? '<span class="mp-row-tag mp-tag-resmi"><i class="fa-solid fa-certificate"></i> RESMI · SEG ' + p.segment + '</span>'
-    : '<span class="mp-row-tag mp-tag-r2"><i class="fa-solid fa-fire-flame-curved"></i> R2 · ' + getR2Tier(p.price).toUpperCase() + '</span>';
-  var thumb = '<div class="mp-row-thumb">' + generateProductPlaceholder(p.name, 'small', p.id) + '</div>';
-  return '<div class="mp-row' + (isResmi ? ' is-resmi' : '') + '" style="animation-delay:' + (idx * 25) + 'ms" data-pid="' + p.id + '">' +
-    '<div class="mp-row-main">' + thumb + '<div class="min-w-0">' +
-    (ribbon ? '<span class="mp-row-ribbon mp-ribbon-' + ribbon.cls + '">' + ribbon.label + '</span>' : '') +
-    '<div class="mp-row-name truncate">' + escapeHtml(p.name) + '</div>' +
-    '<div class="mp-row-rating"><span class="mp-stars sm">' + renderStars(rating) + '</span><span class="mp-rating-num">' + rating.toFixed(1) + '</span><span class="mt-1">' + catBadge + '</span></div>' +
+    ? '<span class="p-tag tag-resmi">RESMI · SEG ' + p.segment + '</span>'
+    : '<span class="p-tag tag-r2">R2 · ' + getR2Tier(p.price).toUpperCase() + '</span>';
+  return '<div class="t-row" style="animation-delay:' + (idx * 22) + 'ms" data-pid="' + p.id + '">' +
+    '<div class="t-main"><div class="t-thumb">' + initialsOf(p.name) + '</div><div style="min-width:0">' +
+      '<div class="t-name">' + escapeHtml(p.name) + (ribbon ? ' <span class="p-ribbon rb-' + ribbon.cls + '" style="position:static;display:inline-block;vertical-align:middle">' + ribbon.label + '</span>' : '') + '</div>' +
+      '<div class="t-meta"><span class="p-stars" style="font-size:9px">' + renderStars(rating) + '</span><span class="p-rnum">' + rating.toFixed(1) + '</span>' + catBadge + '</div>' +
     '</div></div>' +
-    '<div class="mp-row-price"><span class="mp-price-old sm">' + formatRupiah(retail) + '</span><span class="mp-price-now sm">' + formatRupiah(p.price) + '</span></div>' +
-    '<div class="text-[11px] font-bold text-slate-500 hidden md:block">' + p.id.toUpperCase() + '</div>' +
-    '<div class="mp-row-actions">' +
-    '<button onclick="toggleWishlistItem(\'' + p.id + '\', event)" data-wish-heart="' + p.id + '" class="mp-wish-btn sm' + (wl ? ' is-active' : '') + '" aria-label="Wishlist"><i class="fa-' + (wl ? 'solid' : 'regular') + ' fa-heart"></i></button>' +
-    buildRowActions(p) + '</div></div>';
+    '<div class="t-price"><small>' + formatRupiah(retail) + '</small>' + formatRupiah(p.price) + '</div>' +
+    '<div class="t-id">' + p.id.toUpperCase() + '</div>' +
+    '<div class="t-actions">' +
+      '<button onclick="toggleWishlistItem(\'' + p.id + '\', event)" data-wish-heart="' + p.id + '" class="p-wish' + (wl ? ' is-active' : '') + '" style="position:static" aria-label="Wishlist"><i class="fa-' + (wl ? 'solid' : 'regular') + ' fa-heart"></i></button>' +
+      buildRowActions(p) +
+    '</div></div>';
 }
 function renderProductDisplay() {
   var processed = getProcessedProducts();
@@ -310,23 +297,17 @@ function renderProductDisplay() {
   if (!pp.length) {
     if (grid) grid.innerHTML = ''; if (body) body.innerHTML = '';
     if (none) none.classList.remove('hidden');
+    if (wrap) wrap.classList.add('hidden'); if (grid) grid.classList.add('hidden');
     renderPagination(tp); return;
   }
   if (none) none.classList.add('hidden');
   if (viewMode === 'table') {
-    if (grid) grid.classList.add('hidden');
+    if (grid) { grid.classList.add('hidden'); grid.innerHTML = ''; }
     if (wrap) wrap.classList.remove('hidden');
     if (body) body.innerHTML = pp.map(buildProductRowHTML).join('');
   } else {
     if (wrap) wrap.classList.add('hidden');
     if (grid) { grid.classList.remove('hidden'); grid.innerHTML = pp.map(buildProductCardHTML).join(''); }
-    if (grid) grid.querySelectorAll('.card-glow').forEach(function (c) {
-      c.addEventListener('mousemove', function (e) {
-        var r = c.getBoundingClientRect();
-        c.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-        c.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
-      });
-    });
   }
   renderPagination(tp); updateActiveFilterIndicator();
 }
@@ -334,7 +315,7 @@ function updateActiveFilterIndicator() {
   var ind = document.getElementById('activeFilterIndicator'), txt = document.getElementById('activeFilterText');
   if (!ind || !txt) return;
   if (activeFilter === 'all') { ind.classList.add('hidden'); return; }
-  ind.classList.remove('hidden'); ind.classList.add('flex');
+  ind.classList.remove('hidden');
   var L = { hemat: 'Hemat (≤ Rp 76.000)', populer: 'Populer (Rp 77.000–89.000)', premium: 'Premium (≥ Rp 90.000)', segA: 'Segmen A — Kretek Filter Premium', segB: 'Segmen B — Kretek Filter Reguler', segC: 'Segmen C — Mild / Rendah Tar', segD: 'Segmen D — SPM Internasional', segE: 'Segmen E — Kretek Tangan / Legacy' };
   txt.textContent = 'Filter: ' + (L[activeFilter] || activeFilter);
 }
@@ -342,21 +323,15 @@ function renderPagination(tp) {
   var c = document.getElementById('paginationContainer'); if (!c) return;
   if (tp <= 1) { c.innerHTML = ''; return; }
   var h = '';
-  for (var i = 1; i <= tp; i++) h += '<button onclick="window.__goToPage(' + i + ')" class="w-10 h-10 rounded-xl text-sm font-bold transition-all ' + (i === currentPage ? 'bg-deep text-white shadow-md' : 'bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-gold') + '">' + i + '</button>';
+  for (var i = 1; i <= tp; i++) h += '<button onclick="window.__goToPage(' + i + ')" class="page-btn' + (i === currentPage ? ' on' : '') + '">' + i + '</button>';
   c.innerHTML = h;
 }
 window.__goToPage = function (p) { currentPage = p; renderProductDisplay(); var t = document.getElementById('produk'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
 window.applyFilter = function (f) {
   activeFilter = f; currentPage = 1;
-  document.querySelectorAll('.filter-chip').forEach(function (c) {
-    if (c.classList.contains('filter-chip-resmi')) { c.classList.remove('filter-chip-resmi', 'segment-active'); c.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200'); }
-    else { c.classList.remove('bg-deep', 'text-white', 'shadow-md'); c.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200'); }
-  });
+  document.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on'); });
   var a = document.getElementById('chip-' + f);
-  if (a) {
-    if (a.classList.contains('filter-chip-resmi') || f.indexOf('seg') === 0) { a.classList.add('segment-active'); a.classList.remove('bg-white', 'text-slate-600'); }
-    else { a.classList.add('bg-deep', 'text-white', 'shadow-md'); a.classList.remove('bg-white', 'text-slate-600'); }
-  }
+  if (a) a.classList.add('on');
   renderProductDisplay();
 };
 window.applySort = function (s) { activeSort = s; currentPage = 1; renderProductDisplay(); };
@@ -374,7 +349,7 @@ window.toggleWishlistItem = function (id, event) {
   if (event) event.stopPropagation();
   var i = wishlist.indexOf(id);
   if (i > -1) { wishlist.splice(i, 1); showToast('Dihapus dari Wishlist', 'info'); }
-  else { wishlist.push(id); showToast('Ditambahkan ke Wishlist', 'success'); }
+  else { wishlist.push(id); showToast('Ditambahkan ke Wishlist ♥'); }
   saveWishlist(); updateWishlistUI(); renderProductDisplay();
 };
 function updateWishlistUI() {
@@ -383,26 +358,29 @@ function updateWishlistUI() {
   document.querySelectorAll('[data-wish-heart]').forEach(function (btn) {
     var id = btn.getAttribute('data-wish-heart'), on = isWishlisted(id);
     btn.classList.toggle('is-active', on);
-    var ic = btn.querySelector('i'); if (ic) ic.className = 'fa-' + (on ? 'solid' : 'regular') + ' fa-heart text-xs';
+    var ic = btn.querySelector('i'); if (ic) ic.className = 'fa-' + (on ? 'solid' : 'regular') + ' fa-heart';
   });
   var c = document.getElementById('wishlistItemsContainer'); if (!c) return;
   if (!wishlist.length) {
-    c.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center opacity-50"><i class="fa-regular fa-heart text-6xl text-slate-300 mb-4"></i><p class="font-bold text-slate-600 dark:text-slate-400">Wishlist Kosong</p></div>';
+    c.innerHTML = '<div class="drawer-empty"><i class="fa-regular fa-heart"></i><p>Wishlist Kosong</p></div>';
     return;
   }
   c.innerHTML = wishlist.map(function (id) {
     var p = allProducts.find(function (x) { return x.id === id; }); if (!p) return '';
-    return '<div class="flex items-center gap-3 bg-ivory dark:bg-white/5 p-3 rounded-xl border border-slate-100 dark:border-white/10">' +
-      '<div class="flex-1 min-w-0"><div class="font-bold text-sm text-deep dark:text-white truncate">' + escapeHtml(p.name) + '</div><div class="text-gold font-mono text-xs font-bold">' + formatRupiah(p.price) + '</div></div>' +
-      '<button onclick="window.__addCart(\'' + p.id + '\'); toggleWishlistItem(\'' + p.id + '\');" class="w-8 h-8 rounded-lg bg-deep text-white flex items-center justify-center hover:bg-gold transition-colors" title="Pindah ke Keranjang"><i class="fa-solid fa-cart-plus text-xs"></i></button>' +
-      '<button onclick="toggleWishlistItem(\'' + p.id + '\')" class="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-900/30 text-red-500 flex items-center justify-center hover:bg-red-100 transition-colors"><i class="fa-solid fa-trash text-xs"></i></button></div>';
+    return '<div class="cart-item">' +
+      '<div class="ci-thumb">' + initialsOf(p.name) + '</div>' +
+      '<div class="ci-info"><div class="ci-name">' + escapeHtml(p.name) + '</div><div class="ci-price">' + formatRupiah(p.price) + '</div></div>' +
+      '<button onclick="window.__addCart(\'' + p.id + '\'); toggleWishlistItem(\'' + p.id + '\');" class="t-add" title="Pindah ke Keranjang"><i class="fa-solid fa-cart-plus"></i></button>' +
+      '<button onclick="toggleWishlistItem(\'' + p.id + '\')" class="t-add" style="background:transparent;border:1.5px solid var(--line);color:#ef4444"><i class="fa-solid fa-trash"></i></button>' +
+    '</div>';
   }).join('');
 }
 window.toggleWishlistSidebar = function () {
   var o = document.getElementById('wishlistOverlay'), s = document.getElementById('wishlistSidebar');
   if (!o || !s) return;
-  if (s.classList.contains('translate-x-full')) { o.classList.remove('hidden'); setTimeout(function () { o.classList.remove('opacity-0'); }, 10); s.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
-  else { o.classList.add('opacity-0'); s.classList.add('translate-x-full'); setTimeout(function () { o.classList.add('hidden'); }, 300); document.body.style.overflow = ''; }
+  var open = s.classList.contains('open');
+  if (!open) { o.classList.remove('hidden'); setTimeout(function () { o.classList.add('overlay-enter'); }, 10); s.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  else { o.classList.remove('overlay-enter'); s.classList.remove('open'); setTimeout(function () { o.classList.add('hidden'); }, 300); document.body.style.overflow = ''; }
 };
 
 /* ============ 9. QUICK VIEW ============ */
@@ -410,7 +388,7 @@ window.openQuickView = function (id) {
   var p = allProducts.find(function (x) { return x.id === id; }); if (!p) return;
   var t = document.getElementById('qvTitle'), pr = document.getElementById('qvPrice'), b = document.getElementById('qvBadge'), i = document.getElementById('qvId'), d = document.getElementById('qvDesc');
   if (t) t.textContent = p.name;
-  if (pr) pr.innerHTML = formatRupiah(p.price) + '<span class="text-xs text-slate-400 font-sans font-medium">/slop</span>';
+  if (pr) pr.innerHTML = formatRupiah(p.price) + '<small style="font-size:12px;color:var(--ink-3)"> /slop</small>';
   if (i) i.textContent = p.id.toUpperCase();
   if (d) d.textContent = p.category === 'resmi' ? (p.segmentName || '') : 'Katalog R2 Nusantara — harga kompetitif untuk margin maksimal.';
   if (b) {
@@ -451,7 +429,7 @@ window.__addCart = function (id) {
   var p = allProducts.find(function (x) { return x.id === id; }); if (!p) return;
   var ex = cart.find(function (x) { return x.id === id; });
   if (ex) ex.qty += 1; else cart.push({ id: p.id, name: p.name, price: p.price, qty: 1, category: p.category });
-  saveCart(); window.__cart = cart; updateCartUI(); showToast('Berhasil ditambahkan');
+  saveCart(); window.__cart = cart; updateCartUI(); showToast('Berhasil ditambahkan ✓');
 };
 window.__updateQty = function (id, ch) {
   var i = cart.find(function (x) { return x.id === id; });
@@ -468,16 +446,16 @@ function updateCartUI() {
   if (pf) pf.style.width = Math.min((t / 20) * 100, 100) + '%';
   if (t >= 20) {
     if (bt) bt.innerText = '🎉 Target Tercapai';
-    if (bs) bs.innerHTML = 'Anda mendapat <b class="text-gold">GRATIS ONGKIR</b>';
-    if (bn) { bn.classList.add('bg-emerald-600'); bn.classList.remove('bg-deep'); }
+    if (bs) bs.innerHTML = 'Anda mendapat <b>GRATIS ONGKIR</b>';
+    if (bn) bn.classList.add('bg-emerald-600');
   } else {
     if (bt) bt.innerText = 'Target Gratis Ongkir';
-    if (bs) bs.innerHTML = 'Pilih <b class="text-gold">' + (20 - t) + ' slop</b> lagi untuk subsidi.';
-    if (bn) { bn.classList.remove('bg-emerald-600'); bn.classList.add('bg-deep'); }
+    if (bs) bs.innerHTML = 'Pilih <b>' + (20 - t) + ' slop</b> lagi untuk subsidi ongkir.';
+    if (bn) bn.classList.remove('bg-emerald-600');
   }
   var cc = document.getElementById('cartItemsContainer'), cs = document.getElementById('cartSummary');
   if (!cart.length) {
-    if (cc) cc.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center opacity-50"><i class="fa-solid fa-cart-shopping text-6xl text-slate-300 mb-4"></i><p class="font-bold text-slate-600 dark:text-slate-400">Keranjang Kosong</p></div>';
+    if (cc) cc.innerHTML = '<div class="drawer-empty"><i class="fa-solid fa-box-open"></i><p>Keranjang Kosong</p></div>';
     if (cs) cs.classList.add('hidden');
   } else {
     if (cs) cs.classList.remove('hidden');
@@ -485,9 +463,11 @@ function updateCartUI() {
     if (ti) ti.innerText = t; if (tpd) tpd.innerText = formatRupiah(tp);
     if (cc) cc.innerHTML = cart.map(function (i) {
       var cb = i.category === 'resmi'
-        ? '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200"><i class="fa-solid fa-certificate text-[8px]"></i> RESMI</span>'
-        : '<span class="inline-flex items-center gap-1 text-[9px] font-bold text-deep bg-deep/5 px-1.5 py-0.5 rounded border border-deep/10"><i class="fa-solid fa-fire-flame-curved text-[8px]"></i> R2</span>';
-      return '<div class="bg-white dark:bg-white/5 p-4 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm flex gap-4"><div class="flex-1 min-w-0"><div class="flex items-center gap-2 mb-1"><span class="font-bold text-sm text-deep dark:text-white truncate">' + escapeHtml(i.name) + '</span>' + cb + '</div><div class="text-gold font-bold font-mono text-sm">' + formatRupiah(i.price) + '</div></div><div class="flex items-center border border-slate-200 dark:border-white/10 rounded-lg h-9 shrink-0"><button onclick="window.__updateQty(\'' + i.id + '\',-1)" class="w-9 h-full font-bold text-slate-500 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">-</button><span class="w-8 text-center text-xs font-bold font-mono">' + i.qty + '</span><button onclick="window.__updateQty(\'' + i.id + '\',1)" class="w-9 h-full font-bold text-gold hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">+</button></div></div>';
+        ? '<span class="ci-cat tag-resmi">RESMI</span>'
+        : '<span class="ci-cat tag-r2">R2</span>';
+      return '<div class="cart-item"><div class="ci-thumb">' + initialsOf(i.name) + '</div>' +
+        '<div class="ci-info"><div class="ci-name">' + escapeHtml(i.name) + ' ' + cb + '</div><div class="ci-price">' + formatRupiah(i.price) + '</div></div>' +
+        '<div class="ci-stepper"><button onclick="window.__updateQty(\'' + i.id + '\',-1)">−</button><span>' + i.qty + '</span><button onclick="window.__updateQty(\'' + i.id + '\',1)">+</button></div></div>';
     }).join('');
   }
   var mp = document.getElementById('modalTotalPrice'); if (mp) mp.innerText = formatRupiah(tp);
@@ -496,8 +476,9 @@ function updateCartUI() {
 window.toggleCart = function () {
   var o = document.getElementById('cartOverlay'), s = document.getElementById('cartSidebar');
   if (!o || !s) return;
-  if (s.classList.contains('translate-x-full')) { o.classList.remove('hidden'); setTimeout(function () { o.classList.remove('opacity-0'); }, 10); s.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
-  else { o.classList.add('opacity-0'); s.classList.add('translate-x-full'); setTimeout(function () { o.classList.add('hidden'); }, 300); document.body.style.overflow = ''; }
+  var open = s.classList.contains('open');
+  if (!open) { o.classList.remove('hidden'); setTimeout(function () { o.classList.add('overlay-enter'); }, 10); s.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  else { o.classList.remove('overlay-enter'); s.classList.remove('open'); setTimeout(function () { o.classList.add('hidden'); }, 300); document.body.style.overflow = ''; }
 };
 
 /* ============ 12. CHECKOUT ============ */
@@ -506,8 +487,8 @@ window.openCheckoutModal = function () {
   toggleCart();
   setTimeout(function () {
     var o = document.getElementById('checkoutModalOverlay'), m = document.getElementById('checkoutModal');
-    if (o) o.classList.add('overlay-enter');
-    if (m) m.classList.add('modal-enter');
+    if (o) { o.classList.remove('hidden'); setTimeout(function () { o.classList.add('overlay-enter'); }, 10); }
+    if (m) setTimeout(function () { m.classList.add('modal-enter'); }, 10);
     document.body.style.overflow = 'hidden';
     updateProgressStep(1);
     setTimeout(function () { var n = document.getElementById('newCustName'); if (n) n.focus(); validateCheckoutForm(); }, 300);
@@ -517,6 +498,7 @@ window.closeCheckoutModal = function () {
   var o = document.getElementById('checkoutModalOverlay'), m = document.getElementById('checkoutModal');
   if (o) o.classList.remove('overlay-enter');
   if (m) m.classList.remove('modal-enter');
+  setTimeout(function () { if (o) o.classList.add('hidden'); }, 300);
   document.body.style.overflow = '';
 };
 function updateProgressStep(n) {
@@ -524,9 +506,9 @@ function updateProgressStep(n) {
   var line = document.getElementById('stepProgressLine');
   inds.forEach(function (ind, idx) {
     if (!ind) return;
-    var num = ind.querySelector('div'), txt = ind.querySelector('span');
-    num.className = 'w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center transition-colors duration-300 border-2 border-white ring-2 ring-slate-100 step-indicator ' + (idx + 1 === n ? 'active shadow-sm' : (idx + 1 < n ? 'completed shadow-sm' : 'bg-slate-100 text-slate-400'));
-    txt.className = 'text-[9px] font-bold uppercase tracking-widest ' + (idx + 1 === n ? 'text-deep dark:text-white' : (idx + 1 < n ? 'text-gold' : 'text-slate-400'));
+    ind.classList.remove('active', 'completed');
+    if (idx + 1 === n) ind.classList.add('active');
+    else if (idx + 1 < n) ind.classList.add('completed');
   });
   if (line) line.style.width = (n === 1 ? 0 : n === 2 ? 50 : 100) + '%';
 }
@@ -544,7 +526,7 @@ function validateCheckoutForm() {
   var ok = true;
   var n = document.getElementById('newCustName');
   if (n && n.value.trim().length >= 2) clearError('newCustName', 'newErrName');
-  else { if (n && n.value.trim().length > 0) { showError('newCustName', 'newErrName', 'Minimal 2 karakter'); } ok = false; }
+  else { if (n && n.value.trim().length > 0) showError('newCustName', 'newErrName', 'Minimal 2 karakter'); ok = false; }
   var ph = document.getElementById('newCustPhone'), pc = ph ? ph.value.replace(/\D/g, '') : '';
   if (pc && /^8[1-9]\d{6,11}$/.test(pc)) clearError('newCustPhone', 'newErrPhone');
   else { if (pc) showError('newCustPhone', 'newErrPhone', 'Nomor tidak valid'); ok = false; }
@@ -565,7 +547,7 @@ window.submitOrder = function () {
   btn.classList.add('checkout-btn-loading'); btnText.textContent = 'Memproses...'; btnIcon.style.display = 'none';
   setTimeout(function () {
     btn.classList.remove('checkout-btn-loading'); btn.classList.add('checkout-success');
-    btnText.textContent = 'Membuka WhatsApp...'; btnIcon.className = 'fa-solid fa-check text-lg'; btnIcon.style.display = '';
+    btnText.textContent = 'Membuka WhatsApp...'; btnIcon.className = 'fa-solid fa-check'; btnIcon.style.display = '';
     var total = cart.reduce(function (s, i) { return s + i.qty; }, 0);
     var r2 = cart.filter(function (i) { return i.category === 'r2'; });
     var resmi = cart.filter(function (i) { return i.category === 'resmi'; });
@@ -578,7 +560,8 @@ window.submitOrder = function () {
       window.open('https://wa.me/' + g('newAdmin').value + '?text=' + encodeURIComponent(m), '_blank');
       cart = []; window.__cart = cart; saveCart(); updateCartUI(); closeCheckoutModal();
       var f = document.getElementById('checkoutFormFull'); if (f) f.reset();
-      btn.classList.remove('checkout-success'); btnText.textContent = 'Konfirmasi Pesanan'; btnIcon.className = 'fa-brands fa-whatsapp text-lg';
+      btn.classList.remove('checkout-success'); btnText.textContent = 'Konfirmasi Pesanan'; btnIcon.className = 'fa-brands fa-whatsapp';
+      document.querySelectorAll('#checkoutFormFull .field-valid').forEach(function (el) { el.classList.remove('field-valid'); });
       validateCheckoutForm(); showToast('Pesanan berhasil dilanjutkan! 🎉');
     }, 800);
   }, 1500);
@@ -587,14 +570,15 @@ window.submitOrder = function () {
 /* ============ 13. REVIEW ============ */
 window.openReviewModal = function () {
   var o = document.getElementById('reviewModalOverlay'), m = document.getElementById('reviewModal');
-  if (o) o.classList.add('overlay-enter');
-  if (m) m.classList.add('modal-enter');
+  if (o) { o.classList.remove('hidden'); setTimeout(function () { o.classList.add('overlay-enter'); }, 10); }
+  if (m) setTimeout(function () { m.classList.add('modal-enter'); }, 10);
   document.body.style.overflow = 'hidden';
 };
 window.closeReviewModal = function () {
   var o = document.getElementById('reviewModalOverlay'), m = document.getElementById('reviewModal');
   if (o) o.classList.remove('overlay-enter');
   if (m) m.classList.remove('modal-enter');
+  setTimeout(function () { if (o) o.classList.add('hidden'); }, 300);
   document.body.style.overflow = '';
   setTimeout(function () { var f = document.getElementById('reviewForm'); if (f) f.reset(); setRating(5); }, 300);
 };
@@ -610,10 +594,12 @@ window.submitReview = function () {
   var name = document.getElementById('reviewName').value, store = document.getElementById('reviewStore').value, text = document.getElementById('reviewText').value, rating = document.getElementById('reviewRating').value;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memproses...'; btn.classList.add('opacity-80', 'pointer-events-none');
   setTimeout(function () {
-    var stars = ''; for (var i = 0; i < 5; i++) stars += i < rating ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-solid fa-star text-slate-200"></i>';
+    var stars = ''; for (var i = 0; i < 5; i++) stars += i < rating ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-solid fa-star" style="opacity:.25"></i>';
     var card = document.createElement('div');
-    card.className = 'testimonial-card-slide relative flex flex-col justify-between';
-    card.innerHTML = '<div><div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full avatar-gradient-9 shrink-0"><span class="avatar-initial">' + escapeHtml(name.charAt(0).toUpperCase()) + '</span></div><div><h4 class="font-serif font-bold text-deep dark:text-white text-base">' + escapeHtml(name) + '</h4><p class="text-xs text-slate-500">' + escapeHtml(store || 'Mitra R2 Nusantara') + '</p></div></div><div class="flex gap-0.5 mb-4 text-gold text-sm">' + stars + '</div><p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">"' + escapeHtml(text) + '"</p></div><div class="mt-6 pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs text-slate-400"><span><i class="fa-solid fa-calendar-days mr-1"></i> Baru saja</span><span class="font-bold"><i class="fa-solid fa-clock"></i> Pending Review</span></div>';
+    card.className = 't-card';
+    card.innerHTML = '<div class="t-quote">“</div><p>' + escapeHtml(text) + '</p>' +
+      '<div class="t-person"><span class="avatar avatar-gradient-1">' + escapeHtml(name.charAt(0).toUpperCase()) + '</span><div><b>' + escapeHtml(name) + '</b><small>' + escapeHtml(store || 'Mitra R2 Nusantara') + '</small></div></div>' +
+      '<div class="t-foot"><span><i class="fa-solid fa-calendar-days"></i> Baru saja</span><span style="color:var(--ink-3);font-weight:700"><i class="fa-solid fa-clock"></i> Pending Review</span></div>';
     var slider = document.getElementById('testimonialSlider');
     if (slider) { slider.insertBefore(card, slider.firstChild); slider.scrollTo({ left: 0, behavior: 'smooth' }); }
     showToast('Terima kasih! Ulasan Anda berhasil dikirim.');
@@ -625,26 +611,43 @@ window.submitReview = function () {
 /* ============ 14. NEWSLETTER ============ */
 window.handleNewsletterSubmit = function (form) {
   var input = form.querySelector('input[type="email"]');
-  if (input && input.value) { showToast('Terima kasih! Anda telah berlangganan newsletter.'); input.value = ''; }
+  if (input && input.value) { showToast('Terima kasih! Anda berlangganan newsletter ✓'); input.value = ''; }
 };
 
-/* ============ 15. INISIALISASI ============ */
+/* ============ 15. CLEAR SEARCH (dipanggil HTML) ============ */
+window.clearSearch = function () {
+  var si = document.getElementById('searchInput'), cb = document.getElementById('clearSearchBtn'), sb = document.getElementById('searchSuggestions');
+  if (si) { si.value = ''; } searchTerm = ''; currentPage = 1;
+  if (cb) cb.classList.add('hidden');
+  if (sb) sb.classList.add('hidden');
+  renderProductDisplay(); if (si) si.focus();
+};
+
+/* ============ 16. INISIALISASI ============ */
 document.addEventListener('DOMContentLoaded', function () {
   var loader = document.getElementById('loader');
-  if (loader) { loader.style.opacity = '0'; setTimeout(function () { loader.style.display = 'none'; }, 700); }
+  if (loader) { setTimeout(function () { loader.style.opacity = '0'; setTimeout(function () { loader.style.display = 'none'; }, 700); }, 500); }
+
+  // restore dark mode
+  try { if (localStorage.getItem('r2_dark_mode') === 'true') document.documentElement.classList.add('dark'); } catch (e) {}
   var di = document.getElementById('darkModeIcon');
-  if (di) di.className = document.documentElement.classList.contains('dark') ? 'fa-solid fa-sun text-[13px] sm:text-sm' : 'fa-solid fa-moon text-[13px] sm:text-sm';
+  if (di) di.className = document.documentElement.classList.contains('dark') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+
   initVisitorCounter();
   initTextAnimations();
-  updateWishlistUI();
   buildFilterChips();
   updateCatalogInfoBanner();
   renderProductDisplay();
   updateCartUI();
-  var cr = document.getElementById('countR2'), cre = document.getElementById('countResmi'), tc = document.getElementById('totalBrandCount');
+  updateWishlistUI();
+
+  var cr = document.getElementById('countR2'), cre = document.getElementById('countResmi'), tc = document.getElementById('totalBrandCount'), tr2 = document.getElementById('tabCountR2'), tre = document.getElementById('tabCountResmi');
   if (cr) cr.textContent = productsR2.length;
   if (cre) cre.textContent = productsResmi.length;
   if (tc) tc.textContent = allProducts.length;
+  if (tr2) tr2.textContent = productsR2.length;
+  if (tre) tre.textContent = productsResmi.length;
+
   var obs = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) en.target.classList.add('is-visible'); }); }, { threshold: 0.1 });
   document.querySelectorAll('.fade-on-scroll').forEach(function (el) { obs.observe(el); });
   var cObs = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { animateCounter(en.target); cObs.unobserve(en.target); } }); }, { threshold: 0.5 });
@@ -654,7 +657,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var CIRC = 113.1;
   window.addEventListener('scroll', function () {
     var h = document.getElementById('headerInner'), btt = document.getElementById('backToTop');
-    if (h) { if (window.scrollY > 50) { h.classList.add('py-2', 'shadow-lg'); h.classList.remove('py-3'); } else { h.classList.add('py-3'); h.classList.remove('py-2', 'shadow-lg'); } }
+    if (h) { if (window.scrollY > 50) h.classList.add('py-2'); else h.classList.remove('py-2'); }
     if (btt) { if (window.scrollY > 500) btt.classList.add('visible'); else btt.classList.remove('visible'); }
     var w = document.getElementById('scrollProgress'), c = document.getElementById('scrollCircle'), l = document.getElementById('scrollPercent');
     if (w && c && l) {
@@ -666,16 +669,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Search + suggestions
   var si = document.getElementById('searchInput'), sb = document.getElementById('searchSuggestions');
   if (si) {
-    var cb = document.getElementById('clearSearchBtn');
-    window.clearSearch = function () {
-      si.value = ''; searchTerm = ''; currentPage = 1;
-      if (cb) cb.classList.add('hidden');
-      if (sb) sb.classList.add('hidden');
-      renderProductDisplay(); si.focus();
-    };
-    var timer;
+    var cb = document.getElementById('clearSearchBtn'), timer;
     si.addEventListener('input', function (e) {
       if (cb) cb.classList.toggle('hidden', e.target.value.length === 0);
       clearTimeout(timer);
@@ -688,8 +685,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (matches.length) {
           sb.innerHTML = matches.map(function (p) {
             var sq = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            var hl = p.name.replace(new RegExp(sq, 'gi'), function (m) { return '<span class="text-gold bg-gold/10 px-0.5 rounded">' + m + '</span>'; });
-            return '<div class="px-4 py-3 hover:bg-ivory dark:hover:bg-white/5 cursor-pointer border-b border-slate-100 dark:border-white/10 last:border-0 flex items-center gap-3 transition-colors" data-suggest-id="' + p.id + '"><i class="fa-solid fa-magnifying-glass text-slate-400 text-xs"></i><div><div class="text-sm font-bold text-deep dark:text-white">' + hl + '</div><div class="text-xs text-slate-500 font-mono">' + formatRupiah(p.price) + '</div></div></div>';
+            var hl = p.name.replace(new RegExp(sq, 'gi'), function (m) { return '<span class="hl">' + m + '</span>'; });
+            return '<div class="suggest-row" data-suggest-id="' + p.id + '"><i class="fa-solid fa-magnifying-glass"></i><div><div class="sn">' + hl + '</div><div class="sp">' + formatRupiah(p.price) + '</div></div></div>';
           }).join('');
           sb.classList.remove('hidden');
         } else sb.classList.add('hidden');
@@ -706,6 +703,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Checkout form wiring
   var inputs = document.querySelectorAll('#checkoutFormFull input, #checkoutFormFull textarea, #checkoutFormFull select');
   inputs.forEach(function (input, index) {
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && input.tagName !== 'TEXTAREA') { e.preventDefault(); if (index < inputs.length - 1) inputs[index + 1].focus(); } });
@@ -723,6 +721,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (m) e.target.value = (!m[2] ? m[1] : m[1] + ' ' + m[2] + (m[3] ? ' ' + m[3] : '')).substring(0, 15);
     else e.target.value = v;
   });
+
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     var m = document.getElementById('checkoutModal'), r = document.getElementById('reviewModal'), q = document.getElementById('quickViewModal');
@@ -730,10 +729,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (r && r.classList.contains('modal-enter')) closeReviewModal();
     if (q && q.classList.contains('modal-enter')) closeQuickView();
   });
-
   var mm = document.getElementById('mobileMenu');
   if (mm) mm.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMobileMenu); });
 
+  // Testimonial slider
   var slider = document.getElementById('testimonialSlider'), prev = document.getElementById('sliderPrevBtn'), next = document.getElementById('sliderNextBtn');
   if (slider && prev && next) {
     var isDown = false, startX, scrollLeft;
@@ -741,7 +740,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.addEventListener('mouseleave', function () { isDown = false; slider.style.scrollSnapType = 'x mandatory'; });
     slider.addEventListener('mouseup', function () { isDown = false; slider.style.scrollSnapType = 'x mandatory'; });
     slider.addEventListener('mousemove', function (e) { if (!isDown) return; e.preventDefault(); var x = e.pageX - slider.offsetLeft; slider.scrollLeft = scrollLeft - (x - startX) * 2; });
-    function amt() { var c = slider.querySelector('.testimonial-card-slide'); return c ? c.offsetWidth + 24 : 350; }
+    function amt() { var c = slider.querySelector('.t-card'); return c ? c.offsetWidth + 18 : 350; }
     next.addEventListener('click', function () { slider.scrollBy({ left: amt(), behavior: 'smooth' }); });
     prev.addEventListener('click', function () { slider.scrollBy({ left: -amt(), behavior: 'smooth' }); });
     var auto = setInterval(function () {
