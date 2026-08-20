@@ -1,4 +1,4 @@
-const CACHE_NAME = 'r2-nusantara-v5.0';
+const CACHE_NAME = 'r2-nusantara-v4.0';
 const urlsToCache = [
   '/id.com/',
   '/id.com/index.html',
@@ -6,7 +6,7 @@ const urlsToCache = [
   '/id.com/app.js',
   '/id.com/data.js',
   '/id.com/manifest.json',
-  'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap',
+  'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'
 ];
 

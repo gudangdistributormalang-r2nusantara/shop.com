@@ -1,24 +1,44 @@
 /* ============================================
-   data.js — Full Product Catalog (233 produk)
-   R2 Nusantara · 167 R2 + 66 Resmi
+data.js — Full Product Catalog (233 produk)
+R2 Nusantara · 167 R2 + 66 Resmi
+Upgrade v6.0 - Clean, Structured & Synchronized
 ============================================ */
 'use strict';
 
-function productImage(id, seed) {
-    var base = 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55';
-    var params = 'w=600&h=600&fit=crop&crop=center';
-    if (seed) params += '&sat=' + seed;
-    return base + '?' + params;
-}
+// ===== COMPANY INFORMATION =====
+window.COMPANY_INFO = {
+    name: 'R2 Nusantara - Cigarette Tobacco Shop',
+    tagline: 'Distributor Rokok Grosir Resmi Malang',
+    location: {
+        name: 'Gudang Distributor - R2 Nusantara',
+        address: 'WJMC+WG8, Karangduren, Kec. Pakisaji, Kabupaten Malang, Jawa Timur 65162',
+        mapsLink: 'https://maps.app.goo.gl/KP6jYrAdmqDQpANJ7?g_st=ac'
+    },
+    contact: {
+        whatsapp: '085715905079',
+        whatsappFormatted: '+62 857-1590-5079',
+        whatsappLink: 'https://wa.me/6285715905079',
+        email: 'cs@r2nusantara.com'
+    },
+    shipping: {
+        partners: ['JNE', 'JNT', 'SiCepat Express', 'Indah Cargo', 'AnterAja', 'Ninja Express'],
+        freeShippingMin: 280000,
+        freeShippingDesc: 'Gratis ongkir minimal 1 bal'
+    },
+    business: {
+        workingHours: 'Senin - Sabtu: 08.00 - 17.00 WIB | Minggu: 09.00 - 15.00 WIB',
+        paymentMethods: ['Transfer Bank (BCA, Mandiri, BNI)', 'Bayar Setelah Resi Keluar']
+    }
+};
 
-// === R2 (167) ===
-var productsR2 = [
-    { id: 'r2-1', name: 'Absolute Bold', price: 118000 },
+// ===== R2 PRODUCTS (167 Items) - CLEANED =====
+var productsR2Raw = [
+    { id: 'r2-1', name: 'Absolute Bold', price: 118000, badge: 'hot' },
     { id: 'r2-2', name: 'Age Pro', price: 65000 },
     { id: 'r2-3', name: 'Alpha Bold', price: 76000 },
     { id: 'r2-4', name: 'Alpha Menthol', price: 76000 },
-    { id: 'r2-5', name: 'Apache Bold', price: 145000 },
-    { id: 'r2-6', name: 'Apache Mild', price: 160000 },
+    { id: 'r2-5', name: 'Apache Bold', price: 145000, badge: 'vip' },
+    { id: 'r2-6', name: 'Apache Mild', price: 160000, badge: 'vip' },
     { id: 'r2-7', name: 'Aroma Kretek', price: 69000 },
     { id: 'r2-8', name: 'Aroma Slim', price: 72000 },
     { id: 'r2-9', name: 'Arrow Bold', price: 115000 },
@@ -26,7 +46,7 @@ var productsR2 = [
     { id: 'r2-11', name: 'Astro Bold', price: 73000 },
     { id: 'r2-12', name: 'Astro Filter', price: 71000 },
     { id: 'r2-13', name: 'Balveer', price: 80000 },
-    { id: 'r2-14', name: 'Bani Click', price: 85000 },
+    { id: 'r2-14', name: 'Bani Click', price: 85000, badge: 'new' },
     { id: 'r2-15', name: 'Bigben', price: 80000 },
     { id: 'r2-16', name: 'Bima Kretek', price: 85000 },
     { id: 'r2-17', name: 'Blitz Menthol', price: 114000 },
@@ -52,7 +72,7 @@ var productsR2 = [
     { id: 'r2-37', name: 'Canyon Bold', price: 75000 },
     { id: 'r2-38', name: 'Canyon Menthol', price: 75000 },
     { id: 'r2-39', name: 'Cappuccino Classic', price: 80000 },
-    { id: 'r2-40', name: 'Cappuccino Gold', price: 85000 },
+    { id: 'r2-40', name: 'Cappuccino Gold', price: 85000, badge: 'hot' },
     { id: 'r2-41', name: 'Cappuccino King', price: 82000 },
     { id: 'r2-42', name: 'Cartel', price: 80000 },
     { id: 'r2-43', name: 'Cesa', price: 80000 },
@@ -61,13 +81,13 @@ var productsR2 = [
     { id: 'r2-46', name: 'Country Bold', price: 112000 },
     { id: 'r2-47', name: 'Dalill Fine', price: 75000 },
     { id: 'r2-48', name: 'Dalill Menthol', price: 77000 },
-    { id: 'r2-49', name: 'Diplomat Bold', price: 150000 },
+    { id: 'r2-49', name: 'Diplomat Bold', price: 150000, badge: 'vip' },
     { id: 'r2-50', name: 'Djanda', price: 85000 },
     { id: 'r2-51', name: 'DTE', price: 80000 },
     { id: 'r2-52', name: 'ERA', price: 90000 },
-    { id: 'r2-53', name: 'Escort Bold 12', price: 145000 },
+    { id: 'r2-53', name: 'Escort Bold 12', price: 145000, badge: 'vip' },
     { id: 'r2-54', name: 'Escort Filter', price: 132000 },
-    { id: 'r2-55', name: 'Excel Click', price: 85000 },
+    { id: 'r2-55', name: 'Excel Click', price: 85000, badge: 'new' },
     { id: 'r2-56', name: 'Falcon Bold', price: 72000 },
     { id: 'r2-57', name: 'Falcon Filter', price: 70000 },
     { id: 'r2-58', name: 'Feloz', price: 85000 },
@@ -112,7 +132,7 @@ var productsR2 = [
     { id: 'r2-97', name: 'Mami Baru', price: 85000 },
     { id: 'r2-98', name: 'Manchester', price: 90000 },
     { id: 'r2-99', name: 'Manchester Blue', price: 128000 },
-    { id: 'r2-100', name: 'Manchester Ice Crush', price: 85000 },
+    { id: 'r2-100', name: 'Manchester Ice Crush', price: 85000, badge: 'new' },
     { id: 'r2-101', name: 'Manchester Red', price: 125000 },
     { id: 'r2-102', name: 'Manchester Ruby', price: 82000 },
     { id: 'r2-103', name: 'Manggo Top', price: 80000 },
@@ -126,11 +146,11 @@ var productsR2 = [
     { id: 'r2-111', name: 'Milano Menthol', price: 135000 },
     { id: 'r2-112', name: 'Milano Red', price: 75000 },
     { id: 'r2-113', name: 'Naxan Bold', price: 80000 },
-    { id: 'r2-114', name: 'Naxan Click', price: 85000 },
+    { id: 'r2-114', name: 'Naxan Click', price: 85000, badge: 'new' },
     { id: 'r2-115', name: 'Nayan Bold', price: 80000 },
-    { id: 'r2-116', name: 'Nayan Click', price: 85000 },
-    { id: 'r2-117', name: 'Neo Mild', price: 220000 },
-    { id: 'r2-118', name: 'Neo Mild Menthol', price: 230000 },
+    { id: 'r2-116', name: 'Nayan Click', price: 85000, badge: 'new' },
+    { id: 'r2-117', name: 'Neo Mild', price: 220000, badge: 'vip' },
+    { id: 'r2-118', name: 'Neo Mild Menthol', price: 230000, badge: 'vip' },
     { id: 'r2-119', name: 'Nevada Blue', price: 72000 },
     { id: 'r2-120', name: 'Nevada Red', price: 72000 },
     { id: 'r2-121', name: 'Nexus Bold', price: 73000 },
@@ -161,10 +181,10 @@ var productsR2 = [
     { id: 'r2-146', name: 'Smith', price: 75000 },
     { id: 'r2-147', name: 'Smith Bold', price: 74000 },
     { id: 'r2-148', name: 'Smith Classic', price: 72000 },
-    { id: 'r2-149', name: 'Smith Filter', price: 145000 },
+    { id: 'r2-149', name: 'Smith Filter', price: 145000, badge: 'vip' },
     { id: 'r2-150', name: 'Smith Menthol', price: 72000 },
-    { id: 'r2-151', name: 'Smith Mild', price: 165000 },
-    { id: 'r2-152', name: 'Star Mild', price: 160000 },
+    { id: 'r2-151', name: 'Smith Mild', price: 165000, badge: 'vip' },
+    { id: 'r2-152', name: 'Star Mild', price: 160000, badge: 'hot' },
     { id: 'r2-153', name: 'Star Mild Menthol', price: 138000 },
     { id: 'r2-154', name: 'Star Pro', price: 105000 },
     { id: 'r2-155', name: 'Stigma', price: 75000 },
@@ -177,127 +197,135 @@ var productsR2 = [
     { id: 'r2-162', name: 'Van Bold', price: 80000 },
     { id: 'r2-163', name: 'Vega Kretek', price: 75000 },
     { id: 'r2-164', name: 'Volt Bold', price: 112000 },
-    { id: 'r2-165', name: 'Win Click', price: 85000 },
+    { id: 'r2-165', name: 'Win Click', price: 85000, badge: 'new' },
     { id: 'r2-166', name: 'Win Kretek', price: 120000 },
-    { id: 'r2-167', name: 'Win Mild', price: 165000 }
-].map(function(p) {
+    { id: 'r2-167', name: 'Win Mild', price: 165000, badge: 'vip' }
+];
+
+var productsR2 = productsR2Raw.map(function(p) {
     return {
         id: p.id,
         category: 'R2',
-        name: p.name,
+        name: p.name.trim(),
         tagline: 'Rokok kretek filter berkualitas dari R2 Nusantara.',
-        price: p.price,
+        price: {
+            wholesale: p.price,
+            retail: Math.round(p.price * 1.15)
+        },
         stock: 100,
-        image: productImage(p.id, (parseInt(p.id.replace(/\D/g, '')) % 20) - 10),
-        gallery: [productImage(p.id, (parseInt(p.id.replace(/\D/g, '')) % 20) - 10)],
-        specs: { tar: '11mg', nicotine: '1.0mg', sticks: 20 },
-        description: 'Produk R2 Nusantara dengan harga grosir kompetitif. Ready stock di Gudang Malang.',
-        badge: null
+        description: 'Produk ' + p.name + ' dari R2 Nusantara dengan harga grosir kompetitif. Ready stock di Gudang Malang.',
+        badge: p.badge || null,
+        rating: p.badge === 'vip' ? 4.8 : (p.badge === 'hot' ? 4.7 : 4.5),
+        isFeatured: p.badge === 'hot' || p.badge === 'vip',
+        isBestseller: p.badge === 'hot',
+        isPremium: p.badge === 'vip',
+        isNew: p.badge === 'new'
     };
 });
 
-// === RESMI (66) ===
+// ===== RESMI PRODUCTS (66 Items) - CLEANED =====
 var productsResmiRaw = [
-    { id: 'resmi-1', name: 'A Mild 12', price: 185000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-2', name: 'A Mild 16', price: 245000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-3', name: 'A Mild Menthol', price: 260000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-4', name: 'Dji Sam Soe Filter', price: 220000, segment: 'A', segmentName: 'Kretek Filter Premium' },
-    { id: 'resmi-5', name: 'Dji Sam Soe Kretek (SKT)', price: 200000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-6', name: 'Dji Sam Soe Magnum Mild', price: 300000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-7', name: 'Marlboro Gold', price: 310000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-8', name: 'Marlboro Ice Blast', price: 320000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-9', name: 'Marlboro Menthol', price: 310000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-10', name: 'Marlboro Red', price: 300000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-11', name: 'Sampoerna Hijau (SKT)', price: 140000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-12', name: 'Sampoerna Kretek', price: 140000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-13', name: 'Sampoerna Mild 12', price: 185000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-14', name: 'Sampoerna Mild 16', price: 245000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-15', name: 'Sampoerna Mild Menthol', price: 260000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-16', name: 'Sampoerna U Bold', price: 230000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-17', name: 'Sampoerna U Mild', price: 210000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-18', name: 'Sampoerna U Mild 12', price: 175000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-19', name: 'Gudang Garam Djaja (SKT)', price: 160000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-20', name: 'Gudang Garam Filter', price: 155000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-21', name: 'Gudang Garam Inter', price: 185000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-22', name: 'Gudang Garam Merah', price: 180000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-23', name: 'Gudang Garam Signature Mild', price: 240000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-24', name: 'Surya 12', price: 170000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-25', name: 'Surya 16', price: 230000, segment: 'A', segmentName: 'Kretek Filter Premium' },
-    { id: 'resmi-26', name: 'Surya Pro 12', price: 160000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-27', name: 'Surya Pro 16', price: 200000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-28', name: 'Surya Promild', price: 225000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-29', name: 'Djarum 76', price: 135000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-30', name: 'Djarum 76 Menthol', price: 150000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-31', name: 'Djarum Black', price: 210000, segment: 'A', segmentName: 'Kretek Filter Premium' },
-    { id: 'resmi-32', name: 'Djarum Black Menthol', price: 230000, segment: 'A', segmentName: 'Kretek Filter Premium' },
-    { id: 'resmi-33', name: 'Djarum Coklat (SKT)', price: 150000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-34', name: 'Djarum Super (SKT)', price: 190000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-35', name: 'Djarum Super 12', price: 215000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-36', name: 'Djarum Super Mild', price: 230000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-37', name: 'Djarum Super Mild 12', price: 190000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-38', name: 'Djarum Super Mild Menthol', price: 240000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-39', name: 'LA Bold', price: 215000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-40', name: 'LA Lights 12', price: 180000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-41', name: 'LA Lights 16', price: 220000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-42', name: 'LA Lights Menthol', price: 240000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-43', name: 'Bentoel Biru', price: 160000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-44', name: 'Bentoel Filter', price: 150000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-45', name: 'Bentoel Mild', price: 180000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-46', name: 'Bentoel Sejati (SKT)', price: 130000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-47', name: 'Camel Filter', price: 220000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-48', name: 'Camel Yellow', price: 210000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-49', name: 'Dunhill Filter', price: 230000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-50', name: 'Dunhill Mild', price: 240000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-51', name: 'Lucky Strike Filter', price: 220000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-52', name: 'Pall Mall Filter', price: 200000, segment: 'D', segmentName: 'SPM Internasional' },
-    { id: 'resmi-53', name: 'Class Filter', price: 120000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-54', name: 'Class Mild 12', price: 175000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-55', name: 'Class Mild 16', price: 210000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-56', name: 'Class Mild Menthol', price: 220000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-57', name: 'Clas Mild 12', price: 175000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-58', name: 'Clas Mild 16', price: 210000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-59', name: 'Minak Djinggo Original', price: 95000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-60', name: 'Minak Djinggo Rempah', price: 95000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-61', name: 'Galan Filter', price: 100000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-62', name: 'Galan Kretek', price: 100000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-63', name: 'Wismilak Filter', price: 110000, segment: 'B', segmentName: 'Kretek Filter Reguler' },
-    { id: 'resmi-64', name: 'Wismilak Kretek (SKT)', price: 105000, segment: 'E', segmentName: 'Kretek Tangan / Legacy' },
-    { id: 'resmi-65', name: 'Wismilak Mild', price: 140000, segment: 'C', segmentName: 'Mild / Rendah Tar' },
-    { id: 'resmi-66', name: 'Wismilak Special', price: 110000, segment: 'B', segmentName: 'Kretek Filter Reguler' }
+    { id: 'resmi-1', name: 'A Mild 12', price: 185000, badge: 'hot' },
+    { id: 'resmi-2', name: 'A Mild 16', price: 245000 },
+    { id: 'resmi-3', name: 'A Mild Menthol', price: 260000, badge: 'hot' },
+    { id: 'resmi-4', name: 'Dji Sam Soe Filter', price: 220000 },
+    { id: 'resmi-5', name: 'Dji Sam Soe Kretek (SKT)', price: 200000 },
+    { id: 'resmi-6', name: 'Dji Sam Soe Magnum Mild', price: 300000, badge: 'vip' },
+    { id: 'resmi-7', name: 'Marlboro Gold', price: 310000, badge: 'hot' },
+    { id: 'resmi-8', name: 'Marlboro Ice Blast', price: 320000, badge: 'new' },
+    { id: 'resmi-9', name: 'Marlboro Menthol', price: 310000 },
+    { id: 'resmi-10', name: 'Marlboro Red', price: 300000, badge: 'hot' },
+    { id: 'resmi-11', name: 'Sampoerna Hijau (SKT)', price: 140000 },
+    { id: 'resmi-12', name: 'Sampoerna Kretek', price: 140000 },
+    { id: 'resmi-13', name: 'Sampoerna Mild 12', price: 185000 },
+    { id: 'resmi-14', name: 'Sampoerna Mild 16', price: 245000 },
+    { id: 'resmi-15', name: 'Sampoerna Mild Menthol', price: 260000 },
+    { id: 'resmi-16', name: 'Sampoerna U Bold', price: 230000 },
+    { id: 'resmi-17', name: 'Sampoerna U Mild', price: 210000 },
+    { id: 'resmi-18', name: 'Sampoerna U Mild 12', price: 175000 },
+    { id: 'resmi-19', name: 'Gudang Garam Djaja (SKT)', price: 160000 },
+    { id: 'resmi-20', name: 'Gudang Garam Filter', price: 155000 },
+    { id: 'resmi-21', name: 'Gudang Garam Inter', price: 185000 },
+    { id: 'resmi-22', name: 'Gudang Garam Merah', price: 180000, badge: 'hot' },
+    { id: 'resmi-23', name: 'Gudang Garam Signature Mild', price: 240000 },
+    { id: 'resmi-24', name: 'Surya 12', price: 170000 },
+    { id: 'resmi-25', name: 'Surya 16', price: 230000 },
+    { id: 'resmi-26', name: 'Surya Pro 12', price: 160000 },
+    { id: 'resmi-27', name: 'Surya Pro 16', price: 200000 },
+    { id: 'resmi-28', name: 'Surya Promild', price: 225000 },
+    { id: 'resmi-29', name: 'Djarum 76', price: 135000 },
+    { id: 'resmi-30', name: 'Djarum 76 Menthol', price: 150000 },
+    { id: 'resmi-31', name: 'Djarum Black', price: 210000, badge: 'vip' },
+    { id: 'resmi-32', name: 'Djarum Black Menthol', price: 230000, badge: 'vip' },
+    { id: 'resmi-33', name: 'Djarum Coklat (SKT)', price: 150000 },
+    { id: 'resmi-34', name: 'Djarum Super (SKT)', price: 190000, badge: 'hot' },
+    { id: 'resmi-35', name: 'Djarum Super 12', price: 215000 },
+    { id: 'resmi-36', name: 'Djarum Super Mild', price: 230000 },
+    { id: 'resmi-37', name: 'Djarum Super Mild 12', price: 190000 },
+    { id: 'resmi-38', name: 'Djarum Super Mild Menthol', price: 240000 },
+    { id: 'resmi-39', name: 'LA Bold', price: 215000 },
+    { id: 'resmi-40', name: 'LA Lights 12', price: 180000 },
+    { id: 'resmi-41', name: 'LA Lights 16', price: 220000 },
+    { id: 'resmi-42', name: 'LA Lights Menthol', price: 240000 },
+    { id: 'resmi-43', name: 'Bentoel Biru', price: 160000 },
+    { id: 'resmi-44', name: 'Bentoel Filter', price: 150000 },
+    { id: 'resmi-45', name: 'Bentoel Mild', price: 180000 },
+    { id: 'resmi-46', name: 'Bentoel Sejati (SKT)', price: 130000 },
+    { id: 'resmi-47', name: 'Camel Filter', price: 220000 },
+    { id: 'resmi-48', name: 'Camel Yellow', price: 210000 },
+    { id: 'resmi-49', name: 'Dunhill Filter', price: 230000 },
+    { id: 'resmi-50', name: 'Dunhill Mild', price: 240000 },
+    { id: 'resmi-51', name: 'Lucky Strike Filter', price: 220000 },
+    { id: 'resmi-52', name: 'Pall Mall Filter', price: 200000 },
+    { id: 'resmi-53', name: 'Class Filter', price: 120000 },
+    { id: 'resmi-54', name: 'Class Mild 12', price: 175000 },
+    { id: 'resmi-55', name: 'Class Mild 16', price: 210000 },
+    { id: 'resmi-56', name: 'Class Mild Menthol', price: 220000 },
+    { id: 'resmi-57', name: 'Clas Mild 12', price: 175000 },
+    { id: 'resmi-58', name: 'Clas Mild 16', price: 210000 },
+    { id: 'resmi-59', name: 'Minak Djinggo Original', price: 95000 },
+    { id: 'resmi-60', name: 'Minak Djinggo Rempah', price: 95000 },
+    { id: 'resmi-61', name: 'Galan Filter', price: 100000 },
+    { id: 'resmi-62', name: 'Galan Kretek', price: 100000 },
+    { id: 'resmi-63', name: 'Wismilak Filter', price: 110000 },
+    { id: 'resmi-64', name: 'Wismilak Kretek (SKT)', price: 105000 },
+    { id: 'resmi-65', name: 'Wismilak Mild', price: 140000 },
+    { id: 'resmi-66', name: 'Wismilak Special', price: 110000 }
 ];
 
 var productsResmi = productsResmiRaw.map(function(p) {
     return {
         id: p.id,
         category: 'Resmi',
-        name: p.name,
+        name: p.name.trim(),
         tagline: 'Rokok resmi pajak dengan kualitas terbaik.',
-        price: p.price,
+        price: {
+            wholesale: p.price,
+            retail: Math.round(p.price * 1.10)
+        },
         stock: 100,
-        segment: p.segment,
-        segmentName: p.segmentName,
-        image: productImage(p.id, (parseInt(p.id.replace(/\D/g, '')) % 20) - 10),
-        gallery: [productImage(p.id, (parseInt(p.id.replace(/\D/g, '')) % 20) - 10)],
-        specs: { tar: '12mg', nicotine: '1.1mg', sticks: 20 },
-        description: 'Produk resmi dengan pajak berlaku. Harga grosir R2 Nusantara untuk mitra toko.',
-        badge: null
+        description: 'Produk resmi ' + p.name + ' dengan pajak berlaku. Harga grosir R2 Nusantara untuk mitra toko.',
+        badge: p.badge || null,
+        rating: p.badge === 'vip' ? 4.9 : (p.badge === 'hot' ? 4.8 : 4.6),
+        isFeatured: p.badge === 'hot' || p.badge === 'vip',
+        isBestseller: p.badge === 'hot',
+        isPremium: p.badge === 'vip',
+        isNew: p.badge === 'new'
     };
 });
 
+// ===== GABUNGAN & EXPORT =====
 var allProducts = productsR2.concat(productsResmi);
-
-// Tambahkan rating, diskon, reviews
-allProducts.forEach(function(p) {
-    p.rating = Math.round((Math.random() * 4 + 1) * 10) / 10;
-    p.reviews = Math.floor(Math.random() * 50) + 5;
-    p.discount = Math.random() > 0.7 ? Math.floor(Math.random() * 15) + 5 : 0;
-    if (p.discount > 10) p.badge = 'Diskon ' + p.discount + '%';
-    else if (p.discount > 0) p.badge = 'Promo';
-    p.stock = Math.floor(Math.random() * 80) + 20;
-});
 
 window.PRODUCTS = allProducts;
 window.PRODUCTS_R2 = productsR2;
 window.PRODUCTS_RESMI = productsResmi;
+
+window.STATS = {
+    totalProducts: allProducts.length,
+    totalR2: productsR2.length,
+    totalResmi: productsResmi.length,
+    avgPrice: Math.round(allProducts.reduce(function(sum, p) { return sum + p.price.wholesale; }, 0) / allProducts.length)
+};
 
 console.log('✅ Data loaded: ' + allProducts.length + ' products (' + productsR2.length + ' R2, ' + productsResmi.length + ' Resmi)');
